@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./custom.scss">
+        <script type="module" src="index.js"></script>
+    </head>
+<body>
+    <div class="row" style="justify-content: center; padding-top: 20px;">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="direction: rtl;">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg ">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="row justify-content-around">
+                                <div class="col-5">
+                                    <div class="input-group">
+                                        <select class="form-select" id="kind" style="direction: rtl;">
+                                            <option selected id="default-select">בחר סוג תיק</option>
+                                            <option value="תיק" id="choice1" name="choice1" hidden>תיק</option>
+                                            <option value="תיק" id="choice2" name="choice2" hidden>תיק</option>
+                                            <option value="תיק" id="choice3" name="choice3" hidden>תיק</option>
+                                            <option value="תיק" id="choice4" name="choice4" hidden>תיק</option>
+                                            <option value="תיק" id="choice5" name="choice5" hidden>תיק</option>
+                                            <option value="תיק" id="choice6" name="choice6" hidden>תיק</option>
+                                            <option value="תיק" id="choice7" name="choice7" hidden>תיק</option>
+                                            <option value="תיק" id="choice8" name="choice8" hidden>תיק</option>
+                                            <option value="תיק" id="choice9" name="choice9" hidden>תיק</option>
+                                            <option value="תיק" id="choice10" name="choice10" hidden>תיק</option>
+                                            <option value="תיק" id="choice11" name="choice11" hidden>תיק</option>
+                                            <option value="תיק" id="choice12" name="choice12" hidden>תיק</option>
+                                            <option value="תיק" id="choice13" name="choice13" hidden>תיק</option>
+                                            <option value="תיק" id="choice14" name="choice14" hidden>תיק</option>
+                                            <option value="תיק" id="choice15" name="choice15" hidden>תיק</option>
+                                            <option value="תיק" id="choice16" name="choice16" hidden>תיק</option>
+                                            <option value="תיק" id="choice17" name="choice17" hidden>תיק</option>
+                                            <option value="תיק" id="choice18" name="choice18" hidden>תיק</option>
+                                            <option value="תיק" id="choice19" name="choice19" hidden>תיק</option>
+                                            <option value="תיק" id="choice20" name="choice20" hidden>תיק</option>
+                                            <option value="תיק" id="choice21" name="choice21" hidden>תיק</option>
+                                            <option value="תיק" id="choice22" name="choice22" hidden>תיק</option>
+                                            <option value="תיק" id="choice23" name="choice23" hidden>תיק</option>
+                                            <option value="תיק" id="choice24" name="choice24" hidden>תיק</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="input-group mb-3">
+                                        <div style="width: 100%;">
+                                            <span class="input-group-text" >מס' תיק</span>
+                                            <input type="text" class="form-control" aria-label="Server" style="direction: rtl;" id="casenum">
+                                        </div>
+                                        
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around">
+                                <div class="col-5">
+                                    <div class="input-group mb-3">
+                                        <div style="width: 100%;">
+                                            <span class="input-group-text" >שם לקוח</span>
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" style="direction: rtl;" id="cname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="input-group mb-3">
+                                        <div style="width: 100%;">
+                                            <span class="input-group-text" >מס' פלאפון</span>
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" style="direction: rtl;" id="phone">
+                                        </div>    
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class="row justify-content-around" style="margin-top: 15px;">
+                                <div class="col-5">
+                                    <div class="input-group mb-3">
+                                        <div style="width: 100%;">
+                                            <span class="input-group-text" >שם חברה</span>
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" style="direction: rtl;" id="company_name-s">
+                                    
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    
+                                </div>
+                            </div>
+                            <div class="row justify-content-center" style="padding-top: 15px; direction: rtl;">
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;">
+                                    <div class="col-1">
+                                        <img src="/pic/01.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc01"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r02">
+                                    <div class="col-1">
+                                        <img src="/pic/02.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc02"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r03">
+                                    <div class="col-1">
+                                        <img src="/pic/03.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc03" ></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r04">
+                                    <div class="col-1">
+                                        <img src="/pic/04.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc04" ></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r05">
+                                    <div class="col-1">
+                                        <img src="/pic/05.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc05" ></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r06">
+                                    <div class="col-1">
+                                        <img src="/pic/06.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc06" ></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r07">
+                                    <div class="col-1">
+                                        <img src="/pic/07.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea"  id="disc07" ></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r08">
+                                    <div class="col-1">
+                                        <img src="/pic/08.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea"  id="disc08"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r09">
+                                    <div class="col-1">
+                                        <img src="/pic/09.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea"  id="disc09"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r10">
+                                    <div class="col-1">
+                                        <img src="/pic/10.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea"  id="disc10"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r11">
+                                    <div class="col-1">
+                                        <img src="/pic/11.png" alt="logo" width="90%"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc11"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r12">
+                                    <div class="col-1">
+                                        <img src="/pic/12.png" alt="logo" width="90%" />
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc12" ></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r13">
+                                    <div class="col-1">
+                                        <img src="/pic/13.png" alt="logo" width="90%" />
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc13"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="r14">
+                                    <div class="col-1">
+                                        <img src="/pic/14.png" alt="logo" width="90%" />
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea" id="disc14"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal-footer" style="direction: rtl;">
+                    <button type="button" class="btn btn-primary" id="save">שמור</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="exit_newcase">סגור</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="direction: rtl;">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="row justify-content-around">
+                                <div class="col-5">
+                                    
+                                        <span class="input-group-text" >סוג תיק</span>
+                                        <input type="text" class="form-control" aria-label="Sizing example input"  aria-describedby="inputGroup-sizing-default" style="direction: rtl;" id="case_type">
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="input-group">
+                                        <div style="width:100%">
+                                        <span class="input-group-text" >כמות שלבים בתיק</span>
+                                        <select class="form-select" id="levels" style="direction: rtl;">
+                                            <option selected id="default-select1">כמות שלבים בתיק</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;">
+                                <div class="col-1">
+                                    <img src="/pic/01.png" alt="logo" width="90%" id="01"/>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group mb-3"></div>
+                                        <span class="input-group-text" >תיאור</span>
+                                        <textarea class="form-control" aria-label="With textarea"  id="discreption01" name="discreption"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="02">
+                                <div class="col-1">
+                                    <img src="/pic/02.png" alt="logo" width="90%" id="02" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea"  id="discreption02" name="discreption"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="03">
+                                <div class="col-1">
+                                    <img src="/pic/03.png" alt="logo" width="90%" id="03" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption03" name="discreption" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="04">
+                                <div class="col-1">
+                                    <img src="/pic/04.png" alt="logo" width="90%" id="04" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption04" name="discreption" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="05">
+                                <div class="col-1">
+                                    <img src="/pic/05.png" alt="logo" width="90%" id="05" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption05" name="discreption"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="06">
+                                <div class="col-1">
+                                    <img src="/pic/06.png" alt="logo" width="90%" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption06" name="discreption" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="07">
+                                <div class="col-1">
+                                    <img src="/pic/07.png" alt="logo" width="90%" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption07" name="discreption"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="08">
+                                <div class="col-1">
+                                    <img src="/pic/08.png" alt="logo" width="90%" id="08" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption08" name="discreption"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="09">
+                                <div class="col-1">
+                                    <img src="/pic/09.png" alt="logo" width="90%" id="09" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption09" name="discreption"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="10">
+                                <div class="col-1">
+                                    <img src="/pic/10.png" alt="logo" width="90%" id="10" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption10" name="discreption"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="11">
+                                <div class="col-1">
+                                    <img src="/pic/11.png" alt="logo" width="90%" id="11" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption11" name="discreption"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="12">
+                                <div class="col-1">
+                                    <img src="/pic/12.png" alt="logo" width="90%" id="12" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption12" name="discreption" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="13">
+                                <div class="col-1">
+                                    <img src="/pic/13.png" alt="logo" width="90%" id="13" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption13" name="discreption"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="14">
+                                <div class="col-1">
+                                    <img src="/pic/14.png" alt="logo" width="90%" id="14" />
+                                </div>
+                                <div class="col-10">
+                                    <span class="input-group-text" >תיאור</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="discreption14" name="discreption"></textarea>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="direction: rtl;">
+                    <button type="button" class="btn btn-primary" id="save_type">שמור</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="exit_add_case">סגור</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="modal fade"fa id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container" style="background-color: white; color:black; direction: rtl; ">
+                        <div class="row justify-content-around" style="margin-top: 20px;">
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">
+                                    <span class="input-group-text" >איימל מנהל נוכחי</span>
+                                    <input type="text" class="form-control" id="email-admin">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">  
+                                    <span class="input-group-text" >סיסמה מנהל נוכחי</span>  
+                                    <input type="password" class="form-control" id="password-admin">   
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-around" style="margin-top: 20px;">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <span class="input-group-text" >שם פרטי מנהל חדש</span>
+                                    <input type="text" class="form-control" id="firstname-admin">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group" >
+                                    <span class="input-group-text" >שם משפחה מנהל חדש</span>    
+                                    <input type="text" class="form-control" id="lastname-admin">   
+                               </div>
+                            </div>
+                        </div>
+                
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-4">
+                                <div class="form-group" style="margin: 5px;">
+                                    <span class="input-group-text" >אימייל מנהל חדש</span>  
+                                    <input type="text" class="form-control" id="new_email">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group" style="margin: 5px;">  
+                                    <span class="input-group-text" >סיסמת מנהל חדש</span>    
+                                    <input type="password" class="form-control" id="new_password">   
+                               </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group" style="margin: 5px;"> 
+                                    <span class="input-group-text" >אימות סיסמה</span>     
+                                    <input type="password" class="form-control" id="match_password">   
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="direction: rtl;">
+                    <button type="button" class="btn btn-primary" id="save_manger">שמור</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="exit_manger">סגור</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container" style="background-color: white; color:black; direction: rtl; ">
+                        <div class="row justify-content-around" style="margin-top: 20px;">
+                            <div class="col-6">
+                                <div class="row" style="margin: 5px;">
+                                    <span class="input-group-text" style="width:67%;">מספר תיק</span>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="case3">
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-outline-secondary" type="button" id="case_num_check">חפש</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">  
+                                    <span class="input-group-text" >סוג התיק</span>  
+                                    <input class="form-control" id="case_type_update3">   
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">
+                                    <span class="input-group-text" >שם הלקוח</span>  
+                                    <input type="text" class="form-control" id="client_name3"> 
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">   
+                                    <span class="input-group-text" >שם החברה</span>   
+                                    <input type="text" class="form-control" id="cmpname3">   
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">
+                                    <span class="input-group-text" >מס' פלאפון</span>  
+                                    <input type="text" class="form-control" id="phone_number3">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">
+                                    <span class="input-group-text" >שלב נוכחי</span>      
+                                    <input class="form-control" id="curr_level3">   
+                               </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;">
+                            <div class="col-1">
+                                <img src="/pic/01.png" alt="logo" width="90%" id="01"/>
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>  
+                                <textarea class="form-control" aria-label="With textarea" id="discrp01"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a02">
+                            <div class="col-1">
+                                <img src="/pic/02.png" alt="logo" width="90%" id="02" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp02"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a03">
+                            <div class="col-1">
+                                <img src="/pic/03.png" alt="logo" width="90%" id="03" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp03" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a04">
+                            <div class="col-1">
+                                <img src="/pic/04.png" alt="logo" width="90%" id="04" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp04" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a05">
+                            <div class="col-1">
+                                <img src="/pic/05.png" alt="logo" width="90%" id="05" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp05" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a06">
+                            <div class="col-1">
+                                <img src="/pic/06.png" alt="logo" width="90%" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp06" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a07">
+                            <div class="col-1">
+                                <img src="/pic/07.png" alt="logo" width="90%" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp07" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a08">
+                            <div class="col-1">
+                                <img src="/pic/08.png" alt="logo" width="90%" id="08" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp08"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a09">
+                            <div class="col-1">
+                                <img src="/pic/09.png" alt="logo" width="90%" id="09" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp09"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a10">
+                            <div class="col-1">
+                                <img src="/pic/10.png" alt="logo" width="90%" id="10" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp10"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a11">
+                            <div class="col-1">
+                                <img src="/pic/11.png" alt="logo" width="90%" id="11" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp11"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a12">
+                            <div class="col-1">
+                                <img src="/pic/12.png" alt="logo" width="90%" id="12" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp12" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a13">
+                            <div class="col-1">
+                                <img src="/pic/13.png" alt="logo" width="90%" id="13" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp13"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="a14">
+                            <div class="col-1">
+                                <img src="/pic/14.png" alt="logo" width="90%" id="14" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discrp14"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="direction: rtl;">
+                    <button type="button" class="btn btn-success" id="next_level">קידום שלב</button>
+                    <button type="button" class="btn btn-primary" id="update">שמור</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="exitbt">סגור</button>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container" style="background-color: white; color:black; direction: rtl; ">
+                        <div class="row justify-content-around" style="margin-top: 20px;">
+                            <div class="col-6">
+                                <div class="row" style="margin: 5px;">
+                                    <div class="col">
+                                        <span class="input-group-text" >מס' תיק</span>  
+                                        <input type="text" class="form-control" id="case1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">   
+                                    <span class="input-group-text" >סוג התיק</span>   
+                                    <input class="form-control" id="case_type_update1">   
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">
+                                    <span class="input-group-text" >שם הלקוח</span>  
+                                    <input type="text" class="form-control" id="client_name1">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;"> 
+                                    <span class="input-group-text" >שם החברה</span>     
+                                    <input class="form-control" id="company_name1">   
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">
+                                    <span class="input-group-text" >מס' פלאפון</span>  
+                                    <input type="text" class="form-control" id="phone_number1">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group" style="margin: 5px;">   
+                                    <span class="input-group-text" >שלב נוכחי</span>   
+                                    <input class="form-control" id="curr_level1">   
+                               </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;">
+                            <div class="col-1">
+                                <img src="/pic/01.png" alt="logo" width="90%" id="01"/>
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>  
+                                    <textarea class="form-control" aria-label="With textarea" id="discre01" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b02">
+                            <div class="col-1">
+                                <img src="/pic/02.png" alt="logo" width="90%" id="02" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea"  id="discre02" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b03">
+                            <div class="col-1">
+                                <img src="/pic/03.png" alt="logo" width="90%" id="03" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre03" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b04">
+                            <div class="col-1">
+                                <img src="/pic/04.png" alt="logo" width="90%" id="04" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre04" name="discreption" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b05">
+                            <div class="col-1">
+                                <img src="/pic/05.png" alt="logo" width="90%" id="05" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre05" name="discreption" ></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b06">
+                            <div class="col-1">
+                                <img src="/pic/06.png" alt="logo" width="90%" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre06" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b07">
+                            <div class="col-1">
+                                <img src="/pic/07.png" alt="logo" width="90%" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre07" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b08">
+                            <div class="col-1">
+                                <img src="/pic/08.png" alt="logo" width="90%" id="08" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre08" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b09">
+                            <div class="col-1">
+                                <img src="/pic/09.png" alt="logo" width="90%" id="09" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre09" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b10">
+                            <div class="col-1">
+                                <img src="/pic/10.png" alt="logo" width="90%" id="10" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre10" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b11">
+                            <div class="col-1">
+                                <img src="/pic/11.png" alt="logo" width="90%" id="11" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre11" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b12">
+                            <div class="col-1">
+                                <img src="/pic/12.png" alt="logo" width="90%" id="12" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre12" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b13">
+                            <div class="col-1">
+                                <img src="/pic/13.png" alt="logo" width="90%" id="13" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre13" name="discreption"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="b14">
+                            <div class="col-1">
+                                <img src="/pic/14.png" alt="logo" width="90%" id="14" />
+                            </div>
+                            <div class="col-10">
+                                <span class="input-group-text" >תיאור</span>
+                                <textarea class="form-control" aria-label="With textarea" id="discre14" name="discreption"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="direction: rtl;">
+                    <button type="button" class="btn btn-success" id="next_level1">קידום שלב</button>
+                    <button type="button" class="btn btn-primary" id="update1">שמור</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="exit_update1">סגור</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="direction: rtl;">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="row justify-content-around">
+                                <div class="col-5">
+                                    <input type="text" class="form-control" aria-label="Sizing example input" placeholder="סוג תיק" aria-describedby="inputGroup-sizing-default" style="direction: rtl;" id="case_type1">
+                                </div>
+                                <div class="col-5">
+                                    <div class="input-group">
+                                        <select class="form-select" id="levels1" style="direction: rtl;">
+                                            <option selected id = "select_add">כמות שלבים בתיק</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;">
+                                <div class="col-1">
+                                    <img src="/pic/01.png" alt="logo" width="90%" id="01"/>
+                                </div>
+                                <div class="col-10">
+                                        <textarea class="form-control" aria-label="With textarea" placeholder="תיאור" id="discrep01"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e02">
+                                <div class="col-1">
+                                    <img src="/pic/02.png" alt="logo" width="90%" id="02" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="תיאור" id="discrep02" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e03">
+                                <div class="col-1">
+                                    <img src="/pic/03.png" alt="logo" width="90%" id="03" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="תיאור" id="discrep03" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e04">
+                                <div class="col-1">
+                                    <img src="/pic/04.png" alt="logo" width="90%" id="04" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="תיאור" id="discrep04" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e05">
+                                <div class="col-1">
+                                    <img src="/pic/05.png" alt="logo" width="90%" id="05" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="תיאור" id="discrep05" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e06">
+                                <div class="col-1">
+                                    <img src="/pic/06.png" alt="logo" width="90%" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="תיאור" id="discrep06" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e07">
+                                <div class="col-1">
+                                    <img src="/pic/07.png" alt="logo" width="90%" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="תיאור" id="discrep07" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e08">
+                                <div class="col-1">
+                                    <img src="/pic/08.png" alt="logo" width="90%" id="08" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea"  placeholder="תיאור" id="discrep08"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e09">
+                                <div class="col-1">
+                                    <img src="/pic/09.png" alt="logo" width="90%" id="09" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea"  placeholder="תיאור" id="discrep09"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e10">
+                                <div class="col-1">
+                                    <img src="/pic/10.png" alt="logo" width="90%" id="10" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea"  placeholder="תיאור" id="discrep10"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e11">
+                                <div class="col-1">
+                                    <img src="/pic/11.png" alt="logo" width="90%" id="11" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea"  placeholder="תיאור" id="discrep11"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e12">
+                                <div class="col-1">
+                                    <img src="/pic/12.png" alt="logo" width="90%" id="12" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea"  placeholder="תיאור" id="discrep12" ></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e13">
+                                <div class="col-1">
+                                    <img src="/pic/13.png" alt="logo" width="90%" id="13" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="תיאור" id="discrep13"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around align-items-center" style="padding-top: 15px; direction: rtl;" hidden name="e14">
+                                <div class="col-1">
+                                    <img src="/pic/14.png" alt="logo" width="90%" id="14" />
+                                </div>
+                                <div class="col-10">
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="תיאור" id="discrep14"></textarea>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="direction: rtl;">
+                    <button type="button" class="btn btn-primary" id="save_type5">שמור</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="exit_type5">סגור</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- end Modal -->
+        </div>
+        <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="direction: rtl;">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                        <div class="container" style="padding-top: 55px; direction: rtl;">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table7" >
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">מס' תיק</th>
+                                        <th scope="col">סוג' תיק</th>
+                                        <th scope="col">מס' שלב</th>
+                                        <th scope="col">שם לקוח</th>
+                                        <th scope="col">שם חברה</th>
+                                        <th scope="col">פעולות</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer" style="direction: rtl;">
+                    <button type="button" class="btn btn-primary" id="save_type6">שמור</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">סגור</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container" style="background-color: white; color:black; direction: rtl; ">
+                        <div class="row justify-content-around" style="margin-top: 20px;">
+                            <div class="col-12">
+                                <div class="row" style="margin: 5px;">
+                                  
+                                    <div class="col-3">
+
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="input-group-text">מספר תיק</span>
+                                    </div>
+                                    <div class="col-3">
+
+                                    </div>
+                                
+                                </div>
+
+
+                                <div class="row" style="margin: 5px;">
+                                    <div class="col-3">
+
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" id="casenun_pin">
+                                    </div>
+                                    <div class="col-3">
+
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                    
+                <div class="modal-footer" style="direction: rtl; justify-content: center;">
+                    <button type="button" class="btn btn-primary" id="pincase">הצמד תיק</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="exitbt_pin">סגור</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- end Modal -->
+        </div>
+    </div>
+
+    <div class="container d-none d-md-block d-lg-block d-xl-block">
+        <div class="row" style="direction: rtl; margin: 0;">
+            <div class="col-3">
+                <div class="container" style="direction: rtl;">
+                    <nav class="navbar navbar-expand-md flex-md-column" style="padding-top: 40px;">
+                        <a href="#">
+                        <img src="./logo.png" alt="logo" width="95%" id="logo"/>
+                        </a>
+                        <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+                        <ul class="navbar-nav w-10 d-flex flex-md-column" style="padding: 0; padding-top: 65px;">
+                            <li> 
+                                <a class="nav-link" aria-current="page" id="4321"><h4>לכל התיקים</h4></a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModal" id="add_btn"><h4>תיק חדש</h4></a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModal3" id="edit_btn"><h4>עדכון תיק</h4></a>
+                            </li>
+                            <hr>
+                            <li>
+                                <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModal2"><h4>הוספת מנהל</h4></a>
+                            </li>
+                            <li> 
+                                <a class="nav-link" aria-current="page" id="mangers"><h4>לכל המנהלים</h4></a>
+                            </li>
+                            <hr>
+                            <li>
+                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal1" id="add_new_case"><h4>הוספת סוג תיק</h4></a>
+                            </li>
+                            <li>
+                                <a class="nav-link" aria-current="page" id="casestypebtn"><h4>לכל סוגי התיקים</h4></a>
+                            </li>
+                        </ul> 
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="container" id="liroy" name="liroy" hidden>
+                    <div class="container" style="text-align: center;">
+                        <div class="row align-items-center" style="direction: rtl; padding-top: 40px;">
+                            <div class="container">
+                                <input id="search" class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding-top: 55px; direction: rtl;">
+                        <header>
+                            <h1 style="padding: 15px;">תיקים אחרונים</h1>
+                        </header>
+                        <div class="container" style="padding-top: 55px; direction: rtl;">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table9" >
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">מס' תיק</th>
+                                        <th scope="col">סוג' תיק</th>
+                                        <th scope="col">מס' שלב</th>
+                                        <th scope="col">שם לקוח</th>
+                                        <th scope="col">שם חברה</th>
+                                        <th scope="col">פעולות</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="text-align: center; margin-bottom: 30px;">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal7" style="width: 50%;" id="addbtn" >הצמד תיק</button>
+                    </div>
+                </div>
+                <div class="container" id="roi" name="roi" hidden>
+                    <div class="container" style="text-align: center;">
+                        <div class="row align-items-center" style="direction: rtl; padding-top: 40px;">
+                            <div class="container">
+                                <input id="search1" class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding-top: 55px; direction: rtl;">
+                        <header>
+                            <h1 style="padding: 15px; ">כל התיקים </h1>
+                        </header>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table" >
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">מס' תיק</th>
+                                    <th scope="col">שם הלקוח</th>
+                                    <th scope="col">שם החברה</th>
+                                    <th scope="col">סוג' תיק</th>
+                                    <th scope="col">מס' שלב</th>
+                                    <th scope="col">פעולות</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" id="allcasestype" name="allcasestype" hidden>
+                    <div class="container" style="text-align: center;">
+                        <div class="row align-items-center" style="direction: rtl; padding-top: 40px;">
+                            <div class="container">
+                                <input id="search2" class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding-top: 55px; direction: rtl;">
+                        <header>
+                            <h1 style="padding: 15px; ">כל סוגי התיקים </h1>
+                        </header>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table1" >
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">סוג תיק</th>
+                                    <th scope="col">כמות שלבים</th>
+                                    <th scope="col">פעולות</th>
+                                </tr>
+                                </thead>
+                                
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" id="allmangers" name="allmangers" hidden>
+                    <div class="container" style="text-align: center;">
+                        <div class="row align-items-center" style="direction: rtl; padding-top: 40px;">
+                            <div class="container">
+                                <input id="search3" class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding-top: 55px; direction: rtl;">
+                        <header>
+                            <h1 style="padding: 15px; ">כל המנהלים </h1>
+                        </header>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table3" >
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">שם פרטי</th>
+                                    <th scope="col">שם משפחה</th>
+                                    <th scope="col">אימייל</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-block d-md-none">
+        <!-- navbar-ph -->
+        <nav class="navbar bg-light fixed-top">
+            <a href="">
+            <img src="./logoLM.png" alt="logo" width="70%" id="logophone" style="padding-left: 25px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="padding-right: 25px; border: none;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" >
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title " id="offcanvasNavbarLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" style="direction: rtl;">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li> 
+                            <a class="nav-link" aria-current="page" id="4321phone"><h4>לכל התיקים</h4></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModal" id="add_btn"><h4>תיק חדש</h4></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModal3"><h4>עדכון תיק</h4></a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModal2"><h4>הוספת מנהל</h4></a>
+                        </li>
+                        <li> 
+                            <a class="nav-link" aria-current="page" id="mangersphone"><h4>לכל המנהלים</h4></a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal1"><h4>הוספת סוג תיק</h4></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" id="casestypebtnphone"><h4>לכל סוגי התיקים</h4></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end navbar-ph -->
+        <div class="row" style="direction: rtl; margin: 0;">
+                <div class="container" name="lastcasesphone" hidden>
+                    <div class="container" style="text-align: center;">
+                        <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
+                            <div class="container">
+                                <input class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding-top: 15px; direction: rtl;">
+                        <header>
+                            <h3 style="padding: 10px;">תיקים אחרונים</h3>
+                        </header>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered align-middle" style="direction: rtl; text-align: center; ">
+                                <thead>
+                                <tr>
+                                    <th scope="col" class="d-none d-sm-block">#</th>
+                                    <th scope="col" >מס' תיק</th>
+                                    <th scope="col">סוג' תיק</th>
+                                    <th scope="col">מס' שלב</th>
+                                    <th scope="col">פעולות</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row" class="d-none d-sm-block">1</th>
+                                    <td>224-5232</td>
+                                    <td>רישיונות</td>
+                                    <td>2</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
+                                        <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="d-none d-sm-block">2</th>
+                                    <td>225-5232</td>
+                                    <td>כח אדם</td>
+                                    <td>1</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
+                                        <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
+                                    </td>
+                                </tr>
+                                <a href="">
+                                    <tr>
+                                        <th scope="row" class="d-none d-sm-block">3</th>
+                                        <td>226-5232</td>
+                                        <td>מקרקעין</td>
+                                        <td>3</td>
+                                        <td>
+                                            <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
+                                            <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
+                                        </td>
+                                    </tr>
+                                </a>
+                                <a href="">
+                                    <tr>
+                                        <th scope="row" class="d-none d-sm-block">3</th>
+                                        <td>227-5232</td>
+                                        <td>עגורנאי</td>
+                                        <td>5</td>
+                                        <td>
+                                            <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
+                                            <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
+                                        </td>
+                                    </tr>
+                                </a>
+                                <a href="">
+                                    <tr>
+                                        <th scope="row" class="d-none d-sm-block">3</th>
+                                        <td>227-5232</td>
+                                        <td>עגורנאי</td>
+                                        <td>5</td>
+                                        <td>
+                                            <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
+                                            <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
+                                        </td>
+                                    </tr>
+                                </a>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="container" style="text-align: center; padding-top: 10px;">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 50%;" >הוספת תיק חדש</button>
+                    </div>
+                </div>
+                <div class="container" name="allcasesphone" hidden>
+                    <div class="container" style="text-align: center;">
+                        <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
+                            <div class="container">
+                                <input class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding-top: 55px; direction: rtl;">
+                        <header>
+                            <h1 style="padding: 15px; ">כל התיקים </h1>
+                        </header>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table4" >
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">מס' תיק</th>
+                                    <th scope="col">סוג' תיק</th>
+                                    <th scope="col">מס' שלב</th>
+                                    <th scope="col">פעולות</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" name="allcasestypephone" hidden>
+                    <div class="container" style="text-align: center;">
+                        <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
+                            <div class="container">
+                                <input class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding-top: 55px; direction: rtl;">
+                        <header>
+                            <h1 style="padding: 15px; ">כל סוגי התיקים </h1>
+                        </header>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table5" >
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">סוג תיק</th>
+                                    <th scope="col">כמות שלבים</th>
+                                    <th scope="col">פעולות</th>
+                                </tr>
+                                </thead>
+                                
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" name="allmangersphone" hidden>
+                    <div class="container" style="text-align: center;">
+                        <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
+                            <div class="container">
+                                <input class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding-top: 55px; direction: rtl;">
+                        <header>
+                            <h1 style="padding: 15px; ">כל המנהלים </h1>
+                        </header>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table6" >
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">שם פרטי</th>
+                                    <th scope="col">שם משפחה</th>
+                                    <th scope="col">אימייל</th>
+                                    <th scope="col">פעולות</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        document.getElementsByName("liroy")[0].hidden = false;
+        document.getElementsByName("lastcasesphone")[0].hidden = false;
+        
+    </script>
+</body>
+</html>
