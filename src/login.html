@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>לקוחות</title>
+    <link rel="icon" href="./logoLM.png">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./custom.scss">
     <script type="module" defer src="/src/login.js"></script>
 
 </head>
-<body style="direction: rtl;">
+<body style="direction: rtl; font-family: 'Karantina', cursive;">
+    <div id="recaptcha-container"></div>
     <div class="row justify-content-center" style="padding-top: 50px; padding-bottom: 120px;">
         <div class="col-8">
             <img src="../pic/logo2.png" alt="logo" width="100%"/>
@@ -25,42 +28,39 @@
         </div>
     </div>
     <hr>
-    <div class="row justify-content-center" style="padding-top: 120px;">
-        <div class="col-10" style="text-align: center;">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" ><h2>התחברות מנהלים</h2></button>
-        </div>
-    </div>
-    
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">התחברות מנהלים</h5>
+    <div class="modal fade" id="Connect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="input-group input-group-lg">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="PhoneNum"></textarea>
+                        <label for="floatingTextarea">מספר פלאפון לאימות</label>
                     </div>
-                    <br>
-                    <div class="modal-body">
-                        <div class="row" style="direction: ltr;">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2" id="username">
-                                <span class="input-group-text" >אימייל</span>
-                              </div>
-                        </div>
-                        <hr>
-                        <div class="row" style="direction: ltr;">
-                            <div class="input-group mb-3">
-                                <input type="password" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" id="password">
-                                <span class="input-group-text" id="basic-addon2">סיסמא</span>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">סגירת חלון</button>
-                        <button type="button" class="btn btn-success" id="login-btn">התחברות</button>
-                      </div>
-                </div>
+                  </div>
+            </div>
+            <div class="modal-footer" style="justify-content: center; text-align: center;">
+            <button type="button" class="btn btn-primary" id="OkConnect">התחבר</button>
             </div>
         </div>
+        </div>
+    </div>
+    <div class="modal fade" id="Verify" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="input-group input-group-lg">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="VerifyCode"></textarea>
+                        <label for="floatingTextarea">קוד אימות</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="justify-content: center; text-align: center;">
+            <button type="button" class="btn btn-primary" id="OkVerify">התחבר</button>
+            </div>
+        </div>
+        </div>
+    </div>
 </body>
 </html>

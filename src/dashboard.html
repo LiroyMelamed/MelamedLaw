@@ -5,8 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./custom.scss">
         <script type="module" src="index.js"></script>
+        <title>מנהלים</title>
+        <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300&display=swap" rel="stylesheet">
+        <link rel="icon" href="./logoLM.png">
     </head>
-<body>
+<body style="direction: rtl; font-family: 'Karantina', cursive;">
     <div class="row" style="justify-content: center; padding-top: 20px;">
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="direction: rtl;">
@@ -1134,7 +1137,7 @@
                     </div>
                     <div class="container" style="padding-top: 55px; direction: rtl;">
                         <header>
-                            <h1 style="padding: 15px;">תיקים אחרונים</h1>
+                            <h1 style="padding: 15px;">תיקים נעוצים</h1>
                         </header>
                         <div class="container" style="padding-top: 55px; direction: rtl;">
                             <div class="table-responsive">
@@ -1289,175 +1292,115 @@
         </nav>
         <!-- end navbar-ph -->
         <div class="row" style="direction: rtl; margin: 0;">
-                <div class="container" name="lastcasesphone" hidden>
-                    <div class="container" style="text-align: center;">
-                        <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
-                            <div class="container">
-                                <input class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container" style="padding-top: 15px; direction: rtl;">
-                        <header>
-                            <h3 style="padding: 10px;">תיקים אחרונים</h3>
-                        </header>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered align-middle" style="direction: rtl; text-align: center; ">
-                                <thead>
-                                <tr>
-                                    <th scope="col" class="d-none d-sm-block">#</th>
-                                    <th scope="col" >מס' תיק</th>
-                                    <th scope="col">סוג' תיק</th>
-                                    <th scope="col">מס' שלב</th>
-                                    <th scope="col">פעולות</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row" class="d-none d-sm-block">1</th>
-                                    <td>224-5232</td>
-                                    <td>רישיונות</td>
-                                    <td>2</td>
-                                    <td>
-                                        <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
-                                        <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="d-none d-sm-block">2</th>
-                                    <td>225-5232</td>
-                                    <td>כח אדם</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
-                                        <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
-                                    </td>
-                                </tr>
-                                <a href="">
-                                    <tr>
-                                        <th scope="row" class="d-none d-sm-block">3</th>
-                                        <td>226-5232</td>
-                                        <td>מקרקעין</td>
-                                        <td>3</td>
-                                        <td>
-                                            <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
-                                            <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
-                                        </td>
-                                    </tr>
-                                </a>
-                                <a href="">
-                                    <tr>
-                                        <th scope="row" class="d-none d-sm-block">3</th>
-                                        <td>227-5232</td>
-                                        <td>עגורנאי</td>
-                                        <td>5</td>
-                                        <td>
-                                            <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
-                                            <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
-                                        </td>
-                                    </tr>
-                                </a>
-                                <a href="">
-                                    <tr>
-                                        <th scope="row" class="d-none d-sm-block">3</th>
-                                        <td>227-5232</td>
-                                        <td>עגורנאי</td>
-                                        <td>5</td>
-                                        <td>
-                                            <button type="button" class="btn btn-warning" style="width: 80%;">עריכה</button>
-                                            <button type="button" class="btn btn-danger" style="width: 80%;">מחיקה</button>
-                                        </td>
-                                    </tr>
-                                </a>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="container" style="text-align: center; padding-top: 10px;">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 50%;" >הוספת תיק חדש</button>
-                    </div>
-                </div>
-                <div class="container" name="allcasesphone" hidden>
-                    <div class="container" style="text-align: center;">
-                        <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
-                            <div class="container">
-                                <input class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container" style="padding-top: 55px; direction: rtl;">
-                        <header>
-                            <h1 style="padding: 15px; ">כל התיקים </h1>
-                        </header>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table4" >
-                                <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">מס' תיק</th>
-                                    <th scope="col">סוג' תיק</th>
-                                    <th scope="col">מס' שלב</th>
-                                    <th scope="col">פעולות</th>
-                                </tr>
-                                </thead>
-                            </table>
+            <div class="container" id="lastcasesphone" name="lastcasesphone" hidden>
+                <div class="container" style="text-align: center;">
+                    <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
+                        <div class="container">
+                            <input id="Search" class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
                         </div>
                     </div>
                 </div>
-                <div class="container" name="allcasestypephone" hidden>
-                    <div class="container" style="text-align: center;">
-                        <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
-                            <div class="container">
-                                <input class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
-                            </div>
-                        </div>
+                <div class="container" style="padding-top: 15px; direction: rtl;">
+                    <header>
+                        <h3 style="padding: 10px;">תיקים נעוצים</h3>
+                    </header>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered align-middle" style="direction: rtl; text-align: center;" id="table2">
+                            <thead>
+                            <tr>
+                                <th scope="col" class="d-none d-sm-block">#</th>
+                                <th scope="col" >מס' תיק</th>
+                                <th scope="col">סוג' תיק</th>
+                                <th scope="col">מס' שלב</th>
+                                <th scope="col">פעולות</th>
+                            </tr>
+                            </thead>
+                        </table>
                     </div>
-                    <div class="container" style="padding-top: 55px; direction: rtl;">
-                        <header>
-                            <h1 style="padding: 15px; ">כל סוגי התיקים </h1>
-                        </header>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table5" >
-                                <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">סוג תיק</th>
-                                    <th scope="col">כמות שלבים</th>
-                                    <th scope="col">פעולות</th>
-                                </tr>
-                                </thead>
-                                
-                            </table>
+                </div>
+                <div class="container" style="text-align: center; padding-top: 10px;">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 50%;" >הוספת תיק חדש</button>
+                </div>
+            </div>
+            <div class="container" id="allcasesphone" name="allcasesphone" hidden>
+                <div class="container" style="text-align: center;">
+                    <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
+                        <div class="container">
+                            <input id="Search1" class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
                         </div>
                     </div>
                 </div>
-                <div class="container" name="allmangersphone" hidden>
-                    <div class="container" style="text-align: center;">
-                        <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
-                            <div class="container">
-                                <input class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
-                            </div>
-                        </div>
+                <div class="container" style="padding-top: 55px; direction: rtl;">
+                    <header>
+                        <h1 style="padding: 15px; ">כל התיקים </h1>
+                    </header>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table4" >
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">מס' תיק</th>
+                                <th scope="col">סוג' תיק</th>
+                                <th scope="col">מס' שלב</th>
+                                <th scope="col">פעולות</th>
+                            </tr>
+                            </thead>
+                        </table>
                     </div>
-                    <div class="container" style="padding-top: 55px; direction: rtl;">
-                        <header>
-                            <h1 style="padding: 15px; ">כל המנהלים </h1>
-                        </header>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table6" >
-                                <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">שם פרטי</th>
-                                    <th scope="col">שם משפחה</th>
-                                    <th scope="col">אימייל</th>
-                                    <th scope="col">פעולות</th>
-                                </tr>
-                                </thead>
-                            </table>
+                </div>
+            </div>
+            <div class="container" id="allcasestypephone" name="allcasestypephone" hidden>
+                <div class="container" style="text-align: center;">
+                    <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
+                        <div class="container">
+                            <input id="Search2" class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
                         </div>
                     </div>
                 </div>
+                <div class="container" style="padding-top: 55px; direction: rtl;">
+                    <header>
+                        <h1 style="padding: 15px; ">כל סוגי התיקים </h1>
+                    </header>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table5" >
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">סוג תיק</th>
+                                <th scope="col">כמות שלבים</th>
+                                <th scope="col">פעולות</th>
+                            </tr>
+                            </thead>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="allmangersphone" name="allmangersphone" hidden>
+                <div class="container" style="text-align: center;">
+                    <div class="row align-items-center" style="direction: rtl; padding-top: 85px;">
+                        <div class="container">
+                            <input id="Search3" class="form-control" type="text" placeholder="חיפוש תיק" aria-label="Search" style="text-align: center;">
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="padding-top: 55px; direction: rtl;">
+                    <header>
+                        <h1 style="padding: 15px; ">כל המנהלים </h1>
+                    </header>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered align-middle" style="direction: rtl;" id="table6" >
+                            <thead>
+                            <tr>
+                                <th scope="col">שם פרטי</th>
+                                <th scope="col">שם משפחה</th>
+                                <th scope="col">אימייל</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

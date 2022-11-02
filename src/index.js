@@ -100,7 +100,505 @@ const firebaseConfig = {
             editBt.addEventListener("click", function(){
               var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
               myModal.show();
-              alert("modal 4");
+              let text = this.id;
+              const myArray = text.split("-");
+              let case_num = document.getElementById('table9').rows[myArray[1]].cells[1].innerHTML
+              const db = getDatabase();
+              const dbRef1 = ref(db, "/cases/" + case_num);
+              get(child(dbRef, `cases/${case_num}`)).then((snapshot) => {
+                if (snapshot.exists()) {
+                  console.log("editbt:"+snapshot.child("case_number").val());
+              document.getElementById('case1').value = snapshot.child("case_number").val();
+              document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
+              document.getElementById('client_name1').value = snapshot.child("name").val();
+              document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
+              document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+              document.getElementById('company_name1').value = snapshot.child("company_name").val();
+          
+              
+            document.getElementsByName('b02')[0].hidden = true;
+            document.getElementsByName('b03')[0].hidden = true;
+            document.getElementsByName('b04')[0].hidden = true;
+            document.getElementsByName('b05')[0].hidden = true;
+            document.getElementsByName('b06')[0].hidden = true;
+            document.getElementsByName('b07')[0].hidden = true;
+            document.getElementsByName('b08')[0].hidden = true;
+            document.getElementsByName('b09')[0].hidden = true;
+            document.getElementsByName('b10')[0].hidden = true;
+            document.getElementsByName('b11')[0].hidden = true;
+            document.getElementsByName('b12')[0].hidden = true;
+            document.getElementsByName('b13')[0].hidden = true;
+            document.getElementsByName('b14')[0].hidden = true;
+  
+              if(snapshot.child("levels").val() == '1') {
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+              }
+              if(snapshot.child("levels").val() == '2') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+              }
+              if(snapshot.child("levels").val() == '3') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+              }
+              if(snapshot.child("levels").val() == '4') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+              }
+              if(snapshot.child("levels").val() == '5') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+              }
+              if(snapshot.child("levels").val() == '6') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementsByName('b06')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                document.getElementById('discre06').value = snapshot.child("discreption06").val();
+              }
+              if(snapshot.child("levels").val() == '7') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementsByName('b06')[0].hidden = false;
+                document.getElementsByName('b07')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                document.getElementById('discre07').value = snapshot.child("discreption07").val();
+              }
+              if(snapshot.child("levels").val() == '8') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementsByName('b06')[0].hidden = false;
+                document.getElementsByName('b07')[0].hidden = false;
+                document.getElementsByName('b08')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                document.getElementById('discre08').value = snapshot.child("discreption08").val();
+              }
+              if(snapshot.child("levels").val() == '9') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementsByName('b06')[0].hidden = false;
+                document.getElementsByName('b07')[0].hidden = false;
+                document.getElementsByName('b08')[0].hidden = false;
+                document.getElementsByName('b09')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                document.getElementById('discre09').value = snapshot.child("discreption09").val();
+              }
+              if(snapshot.child("levels").val() == '10') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementsByName('b06')[0].hidden = false;
+                document.getElementsByName('b07')[0].hidden = false;
+                document.getElementsByName('b08')[0].hidden = false;
+                document.getElementsByName('b09')[0].hidden = false;
+                document.getElementsByName('b10')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                document.getElementById('discre10').value = snapshot.child("discreption10").val();
+              }
+              if(snapshot.child("levels").val() == '11') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementsByName('b06')[0].hidden = false;
+                document.getElementsByName('b07')[0].hidden = false;
+                document.getElementsByName('b08')[0].hidden = false;
+                document.getElementsByName('b09')[0].hidden = false;
+                document.getElementsByName('b10')[0].hidden = false;
+                document.getElementsByName('b11')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                
+              }
+              if(snapshot.child("levels").val() == '12') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementsByName('b06')[0].hidden = false;
+                document.getElementsByName('b07')[0].hidden = false;
+                document.getElementsByName('b08')[0].hidden = false;
+                document.getElementsByName('b09')[0].hidden = false;
+                document.getElementsByName('b10')[0].hidden = false;
+                document.getElementsByName('b11')[0].hidden = false;
+                document.getElementsByName('b12')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                document.getElementById('discre12').value = snapshot.child("discreption12").val();
+              }
+              if(snapshot.child("levels").val() == '13') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementsByName('b06')[0].hidden = false;
+                document.getElementsByName('b07')[0].hidden = false;
+                document.getElementsByName('b08')[0].hidden = false;
+                document.getElementsByName('b09')[0].hidden = false;
+                document.getElementsByName('b10')[0].hidden = false;
+                document.getElementsByName('b11')[0].hidden = false;
+                document.getElementsByName('b12')[0].hidden = false;
+                document.getElementsByName('b13')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                document.getElementById('discre13').value = snapshot.child("discreption13").val();
+              }
+              if(snapshot.child("levels").val() == '14') {
+                document.getElementsByName('b02')[0].hidden = false;
+                document.getElementsByName('b03')[0].hidden = false;
+                document.getElementsByName('b04')[0].hidden = false;
+                document.getElementsByName('b05')[0].hidden = false;
+                document.getElementsByName('b06')[0].hidden = false;
+                document.getElementsByName('b07')[0].hidden = false;
+                document.getElementsByName('b08')[0].hidden = false;
+                document.getElementsByName('b09')[0].hidden = false;
+                document.getElementsByName('b10')[0].hidden = false;
+                document.getElementsByName('b11')[0].hidden = false;
+                document.getElementsByName('b12')[0].hidden = false;
+                document.getElementsByName('b13')[0].hidden = false;
+                document.getElementsByName('b14')[0].hidden = false;
+                document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                document.getElementById('discre13').value = snapshot.child("discreption13").val();
+                document.getElementById('discre14').value = snapshot.child("discreption14").val();
+              }
+                } else {
+                  console.log("No data available");
+                }
+              }).catch((error) => {
+                console.error(error);
+              })            
+            });
+            cell.appendChild(editBt);
+            var delbtn = document.createElement("button");
+            delbtn.type = "button";
+            delbtn.className ="btn btn-danger"
+            delbtn.textContent = "ביטול צימוד";
+            delbtn.classList.add("btn-delete");
+            delbtn.id="del-" + count++;
+            delbtn.style.marginRight = "10px";
+            delbtn.addEventListener("click", function(){
+              let text = this.id;
+              const myArray = text.split("-");
+              let case_num = document.getElementById('table9').rows[myArray[1]].cells[1].innerHTML;
+              //del from db
+              get(child(dbRef, `cases/${case_num}`)).then((snapshot) => {
+                if (snapshot.exists()) {
+                  let casenum = snapshot.child("case_number").val();
+                  let kind = snapshot.child("case_type").val();
+                  let cname = snapshot.child("name").val();
+                  let company_name = snapshot.child("company_name").val();
+                  let phone = snapshot.child("phone_num").val();
+                  let curr_level = snapshot.child("curr_Level").val();
+                  let disc01 = snapshot.child("discreption01").val();
+                  let tag = "false";
+                  get(child(dbRef, `cases_type/${kind}`)).then((snapshot) => {
+                        if (snapshot.exists()) {
+                          let levels = snapshot.child("case_level").val();
+                          if (levels == "1") {
+                            writeUserData(kind, casenum, cname, phone, disc01, levels, curr_level,company_name,tag);
+                          }
+                          if (levels == "2") {
+                            let disc02 = snapshot.child("discreption02").val();
+                            writeUserData02(kind, casenum, cname, phone, disc01, disc02, levels, curr_level,company_name,tag);
+                          }
+                          if (levels == "3") {
+                            let disc02 = snapshot.child("discreption02").val();
+                            let disc03 = snapshot.child("discreption03").val();;
+                            writeUserData03(kind, casenum, cname, phone, disc01, disc02, disc03, levels, curr_level,company_name,tag);
+                          }
+                          if (levels == "4") {
+                            let disc02 = snapshot.child("discreption02").val();
+                            let disc03 = snapshot.child("discreption03").val();
+                            let disc04 = snapshot.child("discreption04").val();
+                            writeUserData04(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, levels, curr_level,company_name,tag);
+                          }
+                          if (levels == "5") {
+                            let disc02 = snapshot.child("discreption02").val();
+                            let disc03 = snapshot.child("discreption03").val();
+                            let disc04 = snapshot.child("discreption04").val();
+                            let disc05 = snapshot.child("discreption05").val();
+                            writeUserData05(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, levels, curr_level,company_name,tag);
+                          }
+                          if (levels == "6") {
+                              let disc02 = snapshot.child("discreption02").val();
+                              let disc03 = snapshot.child("discreption03").val();
+                              let disc04 = snapshot.child("discreption04").val();
+                              let disc05 = snapshot.child("discreption05").val();
+                              let disc06 = snapshot.child("discreption06").val();
+                              writeUserData06(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, levels, curr_level,company_name,tag);
+                          }
+                          if (levels == "7") {
+                            let disc02 = snapshot.child("discreption02").val();
+                            let disc03 = snapshot.child("discreption03").val();
+                            let disc04 = snapshot.child("discreption04").val();
+                            let disc05 = snapshot.child("discreption05").val();
+                            let disc06 = snapshot.child("discreption06").val();
+                            let disc07 = snapshot.child("discreption07").val();
+                            writeUserData07(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, levels, curr_level,company_name,tag);
+                          }
+                          if (levels == "8") {
+          
+                              let disc02 = snapshot.child("discreption02").val();
+                              let disc03 = snapshot.child("discreption03").val();
+                              let disc04 = snapshot.child("discreption04").val();
+                              let disc05 = snapshot.child("discreption05").val();
+                              let disc06 = snapshot.child("discreption06").val();
+                              let disc07 = snapshot.child("discreption07").val();
+                              let disc08 = snapshot.child("discreption08").val();
+                              writeUserData08(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06 , disc07, disc08, levels, curr_level,company_name,tag);
+                          }
+                          if (levels == "9") {
+                            
+                              let disc02 = snapshot.child("discreption02").val();
+                              let disc03 = snapshot.child("discreption03").val();
+                              let disc04 = snapshot.child("discreption04").val();
+                              let disc05 = snapshot.child("discreption05").val();
+                              let disc06 = snapshot.child("discreption06").val();
+                              let disc07 = snapshot.child("discreption07").val();
+                              let disc08 = snapshot.child("discreption08").val();
+                              let disc09 = snapshot.child("discreption09").val();
+                              writeUserData09(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, levels, curr_level,company_name,tag);
+                          }
+                          if (levels == "10") {
+                              let disc02 = snapshot.child("discreption02").val();
+                              let disc03 = snapshot.child("discreption03").val();
+                              let disc04 = snapshot.child("discreption04").val();
+                              let disc05 = snapshot.child("discreption05").val();
+                              let disc06 = snapshot.child("discreption06").val();
+                              let disc07 = snapshot.child("discreption07").val();
+                              let disc08 = snapshot.child("discreption08").val();
+                              let disc09 = snapshot.child("discreption09").val();
+                              let disc10 = snapshot.child("discreption010").val();
+                              writeUserData10(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, levels, curr_level,company_name,tag);
+                            
+                          }
+                          if (levels == "11") {
+                              let disc02 = snapshot.child("discreption02").val();
+                              let disc03 = snapshot.child("discreption03").val();
+                              let disc04 = snapshot.child("discreption04").val();
+                              let disc05 = snapshot.child("discreption05").val();
+                              let disc06 = snapshot.child("discreption06").val();
+                              let disc07 = snapshot.child("discreption07").val();
+                              let disc08 = snapshot.child("discreption08").val();
+                              let disc09 = snapshot.child("discreption09").val();
+                              let disc10 = snapshot.child("discreption010").val();
+                              let disc11 = snapshot.child("discreption011").val();
+                              writeUserData11(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, levels, curr_level,company_name,tag);
+                            
+                          }
+                          if (levels == "12") {
+                            
+                              let disc02 = snapshot.child("discreption02").val();
+                              let disc03 = snapshot.child("discreption03").val();
+                              let disc04 = snapshot.child("discreption04").val();
+                              let disc05 = snapshot.child("discreption05").val();
+                              let disc06 = snapshot.child("discreption06").val();
+                              let disc07 = snapshot.child("discreption07").val();
+                              let disc08 = snapshot.child("discreption08").val();
+                              let disc09 = snapshot.child("discreption09").val();
+                              let disc10 = snapshot.child("discreption010").val();
+                              let disc11 = snapshot.child("discreption011").val();
+                              let disc12 = snapshot.child("discreption012").val();
+                              writeUserData12(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, levels, curr_level,company_name,tag);
+                            
+                          }
+                          if (levels == "13") {
+                          
+                              let disc02 = snapshot.child("discreption02").val();
+                              let disc03 = snapshot.child("discreption03").val();
+                              let disc04 = snapshot.child("discreption04").val();
+                              let disc05 = snapshot.child("discreption05").val();
+                              let disc06 = snapshot.child("discreption06").val();
+                              let disc07 = snapshot.child("discreption07").val();
+                              let disc08 = snapshot.child("discreption08").val();
+                              let disc09 = snapshot.child("discreption09").val();
+                              let disc10 = snapshot.child("discreption010").val();
+                              let disc11 = snapshot.child("discreption011").val();
+                              let disc12 = snapshot.child("discreption012").val();
+                              let disc13 = snapshot.child("discreption013").val();
+                              writeUserData13(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, levels, curr_level,company_name,tag);
+                            
+                          }
+                          if (levels == "14") {
+                          
+                              let disc02 = snapshot.child("discreption02").val();
+                              let disc03 = snapshot.child("discreption03").val();
+                              let disc04 = snapshot.child("discreption04").val();
+                              let disc05 = snapshot.child("discreption05").val();
+                              let disc06 = snapshot.child("discreption06").val();
+                              let disc07 = snapshot.child("discreption07").val();
+                              let disc08 = snapshot.child("discreption08").val();
+                              let disc09 = snapshot.child("discreption09").val();
+                              let disc10 = snapshot.child("discreption010").val();
+                              let disc11 = snapshot.child("discreption011").val();
+                              let disc12 = snapshot.child("discreption012").val();
+                              let disc13 = snapshot.child("discreption013").val();
+                              let disc14 = snapshot.child("discreption014").val();
+                              writeUserData14(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, disc14, levels, curr_level,company_name,tag);
+                            
+                          }
+                        } else {
+                          console.log("No data available");
+                        }
+                      }).catch((error) => {
+                        console.error(error);
+                      })
+
+                } else {
+                  console.log("No data available");
+                }
+              }).catch((error) => {
+                console.error(error);
+              }) 
+
+              console.log(row_count);
+              table.deleteRow(myArray[1]);
+              for (let i = myArray[1]; i < table.rows.length; i++) {
+                document.getElementById('table9').rows[i].cells[0].innerHTML= i;
+                let temp=i;
+                temp++;
+                var del = document.getElementById("del-"+temp);
+                var edit= document.getElementById("edit-"+temp);
+                del.id = "del-"+i;
+                edit.id = "edit-"+i;
+              }
+            });
+            cell.appendChild(delbtn);
+          }
+        })
+        
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    })
+
+    get(child(dbRef, `cases`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        var table = document.getElementById("table2");
+        let count = 1; 
+        let row_count = 0;
+        snapshot.forEach(snapshot => {
+          var tag = snapshot.child("tag").val();
+          if(tag=="true"){
+            var row = table.insertRow();
+            row_count++;
+            row.id=count;
+            var cell = row.insertCell();
+            cell.innerHTML = count;
+            var cell = row.insertCell();
+            cell.innerHTML = snapshot.child("case_number").val();
+            var cell = row.insertCell();
+            cell.innerHTML = snapshot.child("case_type").val();
+            var cell = row.insertCell();
+            cell.innerHTML = snapshot.child("curr_Level").val();
+            var cell = row.insertCell();
+            cell.id = "cell";
+            var editBt = document.createElement("button");
+            editBt.type = "button";
+            editBt.className ="btn btn-warning"
+            editBt.textContent = "עריכה";
+            editBt.classList.add("btn-edit");
+            editBt.id="edit-"+count;
+            editBt.style.marginRight = "10px";
+            editBt.addEventListener("click", function(){
+              var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
+              myModal.show();
               let text = this.id;
               const myArray = text.split("-");
               let case_num = document.getElementById('table9').rows[myArray[1]].cells[1].innerHTML
@@ -548,14 +1046,6 @@ const firebaseConfig = {
                 console.error(error);
               }) 
 
-
-
-              // const db = getDatabase();
-              // const dbRef1 = ref(db, "/cases/" + case_num);
-              // remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));
-              //end del from db
-  
-              // del from table and update table
               console.log(row_count);
               table.deleteRow(myArray[1]);
               for (let i = myArray[1]; i < table.rows.length; i++) {
@@ -579,12 +1069,8 @@ const firebaseConfig = {
       console.error(error);
     })
 
+  
 
-
-
-
-
-  //////
 
   // writing new case to database
   function writeUserData(kind, casenum, cname, phone, disc01, levels, curr_level,company_name,tag) {
@@ -905,7 +1391,6 @@ const firebaseConfig = {
   }
   //writing new case to data base
   document.getElementById("save").onclick = function() {
-    alert("save");
     let kind = document.getElementById('kind').value;
     let casenum = document.getElementById('casenum').value;
     let cname = document.getElementById('cname').value;
@@ -1161,7 +1646,6 @@ const firebaseConfig = {
           editBt.addEventListener("click", function(){
             var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
             myModal.show();
-            alert("modal 4");
             let text = this.id;
             const myArray = text.split("-");
             let case_num = document.getElementById('table').rows[myArray[1]].cells[1].innerHTML
@@ -3865,10 +4349,7 @@ const firebaseConfig = {
       })
     
 
-  })
-
- //listener to next level
- 
+  }) 
 
 
   //add manger
@@ -3895,7 +4376,7 @@ const firebaseConfig = {
           }
       
           else if(new_password != verify_password){
-              alert("differnt passwords");
+              alert("סיסמאות לא תואמות");
           }
           else{
                 // add manger to db
@@ -3911,10 +4392,10 @@ const firebaseConfig = {
                     email: email,
                   });
                   
-                  alert("manger was added");
+                  alert("המנהל הוסף בהצלחה");
                   })
                   .catch((error) => {
-                    alert("something go wrong cannot add this manger");
+                    alert("אנא נסה שנית");
                   
           });
       
@@ -3923,7 +4404,7 @@ const firebaseConfig = {
             // end verify passwords
         })
         .catch((error) => {
-          alert('error: Wrong email or password were entered');
+          alert('אימייל או סיסמא שגויים');
                 return false;
         });
     
@@ -4200,7 +4681,6 @@ const firebaseConfig = {
           editBt.addEventListener("click", function(){
             var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
             myModal.show();
-            alert("modal 4");
             let text = this.id;
             const myArray = text.split("-");
             let case_num = document.getElementById('table').rows[myArray[1]].cells[1].innerHTML;
@@ -4602,7 +5082,6 @@ const firebaseConfig = {
                 editBt.addEventListener("click", function(){
                   var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
                   myModal.show();
-                  alert("modal 4");
                   let text = this.id;
                   const myArray = text.split("-");
                   let case_num = document.getElementById('table9').rows[myArray[1]].cells[1].innerHTML
@@ -5051,13 +5530,6 @@ const firebaseConfig = {
                   }) 
     
     
-    
-                  // const db = getDatabase();
-                  // const dbRef1 = ref(db, "/cases/" + case_num);
-                  // remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));
-                  //end del from db
-      
-                  // del from table and update table
                   console.log(row_count);
                   table.deleteRow(myArray[1]);
                   for (let i = myArray[1]; i < table.rows.length; i++) {
@@ -5491,6 +5963,31 @@ const firebaseConfig = {
   document.getElementById("4321phone").onclick = function(){
     if (document.getElementsByName("allcasesphone")[0].hidden != false) {
 
+      var x = document.getElementById("allcasestypephone");
+      if (window.getComputedStyle(x).display != "none") {
+        var table = document.getElementById("table1");
+        for(let i =table.rows.length-1; i>=1;i--){
+          table.deleteRow(i);
+        }
+      }
+
+      var y = document.getElementById("allmangersphone");  
+      if (window.getComputedStyle(y).display != "none") {
+        var table1 = document.getElementById("table3");
+        for(let i =table1.rows.length-1; i>=1;i--){
+          table1.deleteRow(i);
+        }
+      }
+
+      var z = document.getElementById("lastcasesphone");  
+      if (window.getComputedStyle(z).display != "none") {
+        var table9 = document.getElementById("table9");
+        for(let i =table9.rows.length-1; i>=1;i--){
+          table9.deleteRow(i);
+        }
+      }
+
+
     document.getElementsByName("lastcasesphone")[0].hidden = true;
     document.getElementsByName("allcasesphone")[0].hidden = false;
     document.getElementsByName("allcasestypephone")[0].hidden = true;
@@ -5500,32 +5997,258 @@ const firebaseConfig = {
       if (snapshot.exists()) {
         var table = document.getElementById("table4");
         let count = 1; 
+        let row_count = 0;
         snapshot.forEach(snapshot => {
           var row = table.insertRow();
+          row_count++;
+          row.id=count;
           var cell = row.insertCell();
           cell.innerHTML = count;
           var cell = row.insertCell();
           cell.innerHTML = snapshot.child("case_number").val();
-          let case_num = snapshot.child("case_number").val();
           var cell = row.insertCell();
           cell.innerHTML = snapshot.child("case_type").val();
           var cell = row.insertCell();
           cell.innerHTML = snapshot.child("curr_Level").val();
+          cell.id = "cell";
           var cell = row.insertCell();
+
+
+          var nextBt = document.createElement("button");
+          nextBt.type = "button";
+          nextBt.className ="btn btn-success"
+          nextBt.textContent = "קידום שלב";
+          nextBt.classList.add("btn-next");
+          nextBt.id="next_lev-"+count;
+          nextBt.addEventListener("click",function(){
+            //change curr level in the table
+            let text = this.id;
+            console.log(text);
+            const myArray = text.split("-");
+            var currlev = parseInt(document.getElementById('table').rows[myArray[1]].cells[5].innerHTML);
+            let levels = snapshot.child("levels").val();
+            if(levels==currlev){
+              alert("לא ניתן לקדם שלב הגעת אל השלב המקסימלי עבור תיק זה")
+            }
+            else{
+              currlev++;
+              document.getElementById('table').rows[myArray[1]].cells[5].innerHTML = currlev;
+            // end change
+
+            // update the database
+
+            let casenum = snapshot.child("case_number").val();
+            let kind = snapshot.child("case_type").val();
+            let cname = snapshot.child("name").val();
+            let company_name = snapshot.child("company_name").val();
+            let phone = snapshot.child("phone_num").val();
+            let curr_level = currlev;
+            let disc01 = snapshot.child("discreption01").val();
+            let tag = snapshot.child("tag").val();
+            
+            const dbRef = ref(getDatabase());
+            get(child(dbRef, `cases_type/${kind}`)).then((snapshot) => {
+              if (snapshot.exists()) {
+                let levels = snapshot.child("case_level").val();
+                if (levels == "1") {
+                  writeUserData(kind, casenum, cname, phone, disc01, levels, curr_level,company_name,tag);
+                }
+                if (levels == "2") {
+                  let disc02 = snapshot.child("discreption02").val();
+                  writeUserData02(kind, casenum, cname, phone, disc01, disc02, levels, curr_level,company_name,tag);
+                }
+                if (levels == "3") {
+                  let disc02 = snapshot.child("discreption02").val();
+                  let disc03 = snapshot.child("discreption03").val();;
+                  writeUserData03(kind, casenum, cname, phone, disc01, disc02, disc03, levels, curr_level,company_name,tag);
+                }
+                if (levels == "4") {
+                  let disc02 = snapshot.child("discreption02").val();
+                  let disc03 = snapshot.child("discreption03").val();
+                  let disc04 = snapshot.child("discreption04").val();
+                  writeUserData04(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, levels, curr_level,company_name,tag);
+                }
+                if (levels == "5") {
+                  let disc02 = snapshot.child("discreption02").val();
+                  let disc03 = snapshot.child("discreption03").val();
+                  let disc04 = snapshot.child("discreption04").val();
+                  let disc05 = snapshot.child("discreption05").val();
+                  writeUserData05(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, levels, curr_level,company_name,tag);
+                }
+                if (levels == "6") {
+                    let disc02 = snapshot.child("discreption02").val();
+                    let disc03 = snapshot.child("discreption03").val();
+                    let disc04 = snapshot.child("discreption04").val();
+                    let disc05 = snapshot.child("discreption05").val();
+                    let disc06 = snapshot.child("discreption06").val();
+                    writeUserData06(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, levels, curr_level,company_name,tag);
+                }
+                if (levels == "7") {
+                  let disc02 = snapshot.child("discreption02").val();
+                  let disc03 = snapshot.child("discreption03").val();
+                  let disc04 = snapshot.child("discreption04").val();
+                  let disc05 = snapshot.child("discreption05").val();
+                  let disc06 = snapshot.child("discreption06").val();
+                  let disc07 = snapshot.child("discreption07").val();
+                  writeUserData07(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, levels, curr_level,company_name,tag);
+                }
+                if (levels == "8") {
+
+                    let disc02 = snapshot.child("discreption02").val();
+                    let disc03 = snapshot.child("discreption03").val();
+                    let disc04 = snapshot.child("discreption04").val();
+                    let disc05 = snapshot.child("discreption05").val();
+                    let disc06 = snapshot.child("discreption06").val();
+                    let disc07 = snapshot.child("discreption07").val();
+                    let disc08 = snapshot.child("discreption08").val();
+                    writeUserData08(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06 , disc07, disc08, levels, curr_level,company_name,tag);
+                }
+                if (levels == "9") {
+                  
+                    let disc02 = snapshot.child("discreption02").val();
+                    let disc03 = snapshot.child("discreption03").val();
+                    let disc04 = snapshot.child("discreption04").val();
+                    let disc05 = snapshot.child("discreption05").val();
+                    let disc06 = snapshot.child("discreption06").val();
+                    let disc07 = snapshot.child("discreption07").val();
+                    let disc08 = snapshot.child("discreption08").val();
+                    let disc09 = snapshot.child("discreption09").val();
+                    writeUserData09(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, levels, curr_level,company_name,tag);
+                }
+                if (levels == "10") {
+                    let disc02 = snapshot.child("discreption02").val();
+                    let disc03 = snapshot.child("discreption03").val();
+                    let disc04 = snapshot.child("discreption04").val();
+                    let disc05 = snapshot.child("discreption05").val();
+                    let disc06 = snapshot.child("discreption06").val();
+                    let disc07 = snapshot.child("discreption07").val();
+                    let disc08 = snapshot.child("discreption08").val();
+                    let disc09 = snapshot.child("discreption09").val();
+                    let disc10 = snapshot.child("discreption010").val();
+                    writeUserData10(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, discrp10, levels, curr_level,company_name,tag);
+                  
+                }
+                if (levels == "11") {
+                    let disc02 = snapshot.child("discreption02").val();
+                    let disc03 = snapshot.child("discreption03").val();
+                    let disc04 = snapshot.child("discreption04").val();
+                    let disc05 = snapshot.child("discreption05").val();
+                    let disc06 = snapshot.child("discreption06").val();
+                    let disc07 = snapshot.child("discreption07").val();
+                    let disc08 = snapshot.child("discreption08").val();
+                    let disc09 = snapshot.child("discreption09").val();
+                    let disc10 = snapshot.child("discreption010").val();
+                    let disc11 = snapshot.child("discreption011").val();
+                    writeUserData11(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, levels, curr_level,company_name,tag);
+                  
+                }
+                if (levels == "12") {
+                  
+                    let disc02 = snapshot.child("discreption02").val();
+                    let disc03 = snapshot.child("discreption03").val();
+                    let disc04 = snapshot.child("discreption04").val();
+                    let disc05 = snapshot.child("discreption05").val();
+                    let disc06 = snapshot.child("discreption06").val();
+                    let disc07 = snapshot.child("discreption07").val();
+                    let disc08 = snapshot.child("discreption08").val();
+                    let disc09 = snapshot.child("discreption09").val();
+                    let disc10 = snapshot.child("discreption010").val();
+                    let disc11 = snapshot.child("discreption011").val();
+                    let disc12 = snapshot.child("discreption012").val();
+                    writeUserData12(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, levels, curr_level,company_name,tag);
+                  
+                }
+                if (levels == "13") {
+                 
+                    let disc02 = snapshot.child("discreption02").val();
+                    let disc03 = snapshot.child("discreption03").val();
+                    let disc04 = snapshot.child("discreption04").val();
+                    let disc05 = snapshot.child("discreption05").val();
+                    let disc06 = snapshot.child("discreption06").val();
+                    let disc07 = snapshot.child("discreption07").val();
+                    let disc08 = snapshot.child("discreption08").val();
+                    let disc09 = snapshot.child("discreption09").val();
+                    let disc10 = snapshot.child("discreption010").val();
+                    let disc11 = snapshot.child("discreption011").val();
+                    let disc12 = snapshot.child("discreption012").val();
+                    let disc13 = snapshot.child("discreption013").val();
+                    writeUserData13(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, levels, curr_level,company_name,tag);
+                  
+                }
+                if (levels == "14") {
+                 
+                    let disc02 = snapshot.child("discreption02").val();
+                    let disc03 = snapshot.child("discreption03").val();
+                    let disc04 = snapshot.child("discreption04").val();
+                    let disc05 = snapshot.child("discreption05").val();
+                    let disc06 = snapshot.child("discreption06").val();
+                    let disc07 = snapshot.child("discreption07").val();
+                    let disc08 = snapshot.child("discreption08").val();
+                    let disc09 = snapshot.child("discreption09").val();
+                    let disc10 = snapshot.child("discreption010").val();
+                    let disc11 = snapshot.child("discreption011").val();
+                    let disc12 = snapshot.child("discreption012").val();
+                    let disc13 = snapshot.child("discreption013").val();
+                    let disc14 = snapshot.child("discreption014").val();
+                    writeUserData14(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, disc14, levels, curr_level,company_name,tag);
+                  
+                }
+              } else {
+                console.log("No data available");
+              }
+            }).catch((error) => {
+              console.error(error);
+            })
+
+            }
+            
+        
+            
+            
+
+          });
+          cell.appendChild(nextBt);
+
           var editBt = document.createElement("button");
           editBt.type = "button";
           editBt.className ="btn btn-warning"
           editBt.textContent = "עריכה";
           editBt.classList.add("btn-edit");
-          editBt.id="edit"+count;
+          editBt.id="edit-"+count;
+          editBt.style.marginRight = "10px";
           editBt.addEventListener("click", function(){
             var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
             myModal.show();
+            let text = this.id;
+            const myArray = text.split("-");
+            let case_num = document.getElementById('table').rows[myArray[1]].cells[1].innerHTML;
+            const db = getDatabase();
+            const dbRef1 = ref(db, "/cases/" + case_num);
+            get(child(dbRef, `cases/${case_num}`)).then((snapshot) => {
+              if (snapshot.exists()) {
+                console.log("editbt:"+snapshot.child("case_number").val());
             document.getElementById('case1').value = snapshot.child("case_number").val();
             document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
             document.getElementById('client_name1').value = snapshot.child("name").val();
             document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
             document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+            document.getElementById('company_name1').value = snapshot.child("company_name").val();
+         
+            
+          document.getElementsByName('b02')[0].hidden = true;
+          document.getElementsByName('b03')[0].hidden = true;
+          document.getElementsByName('b04')[0].hidden = true;
+          document.getElementsByName('b05')[0].hidden = true;
+          document.getElementsByName('b06')[0].hidden = true;
+          document.getElementsByName('b07')[0].hidden = true;
+          document.getElementsByName('b08')[0].hidden = true;
+          document.getElementsByName('b09')[0].hidden = true;
+          document.getElementsByName('b10')[0].hidden = true;
+          document.getElementsByName('b11')[0].hidden = true;
+          document.getElementsByName('b12')[0].hidden = true;
+          document.getElementsByName('b13')[0].hidden = true;
+          document.getElementsByName('b14')[0].hidden = true;
+
             if(snapshot.child("levels").val() == '1') {
               document.getElementById('discre01').value = snapshot.child("discreption01").val();
             }
@@ -5751,6 +6474,18 @@ const firebaseConfig = {
               document.getElementById('discre13').value = snapshot.child("discreption13").val();
               document.getElementById('discre14').value = snapshot.child("discreption14").val();
             }
+
+          
+              } else {
+                console.log("No data available");
+              }
+            }).catch((error) => {
+              console.error(error);
+            })
+
+
+
+            
           });
           cell.appendChild(editBt);
           var delbtn = document.createElement("button");
@@ -5758,12 +6493,32 @@ const firebaseConfig = {
           delbtn.className ="btn btn-danger"
           delbtn.textContent = "מחיקה";
           delbtn.classList.add("btn-delete");
-          delbtn.id="del" + count++;
+          delbtn.id="del-" + count++;
           delbtn.style.marginRight = "10px";
-          delbtn.addEventListener("click", async function(){
+          delbtn.addEventListener("click", function(){
+            let text = this.id;
+            const myArray = text.split("-");
+            let case_num = document.getElementById('table').rows[myArray[1]].cells[1].innerHTML
+            //del from db
             const db = getDatabase();
             const dbRef1 = ref(db, "/cases/" + case_num);
             remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));
+            //end del from db
+
+            // del from table and update table
+            console.log(row_count);
+            table.deleteRow(myArray[1]);
+            for (let i = myArray[1]; i < table.rows.length; i++) {
+              document.getElementById('table').rows[i].cells[0].innerHTML= i;
+              let temp=i;
+              temp++;
+              var del = document.getElementById("del-"+temp);
+              var edit= document.getElementById("edit-"+temp);
+              var next = document.getElementById("next_lev-"+temp);
+              del.id = "del-"+i;
+              edit.id = "edit-"+i;
+              next.id = "next_lev-"+i;
+            }
           });
           cell.appendChild(delbtn);
         }
@@ -6056,10 +6811,7 @@ const firebaseConfig = {
 
               const db = getDatabase();
               const dbRef1 = ref(db, "/cases_type/" + case_num);
-              remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));
-
-              alert(delbtn.id);
-  
+              remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));  
             });
             cell.appendChild(delbtn);
           }
@@ -6090,26 +6842,11 @@ const firebaseConfig = {
         snapshot.forEach(snapshot => {
           var row = table.insertRow();
           var cell = row.insertCell();
-          cell.innerHTML = count;
-          var cell = row.insertCell();
           cell.innerHTML = snapshot.child("first_name").val();
           var cell = row.insertCell();
           cell.innerHTML = snapshot.child("last_name").val();
           var cell = row.insertCell();
           cell.innerHTML = snapshot.child("email").val();
-          var cell = row.insertCell();
-          var delbtn = document.createElement("button");
-          delbtn.type = "button";
-          delbtn.textContent = "מחיקה";
-          delbtn.className ="btn btn-danger"
-          delbtn.classList.add("btn-delete");
-          delbtn.id="del" + count++;
-          delbtn.style.marginRight = "10px";
-          delbtn.addEventListener("click", function(){
-            alert(delbtn.id);
-
-          });
-          cell.appendChild(delbtn);
         })} else {
         console.log("No data available");
       }
@@ -9199,10 +9936,3086 @@ const firebaseConfig = {
   }
 
  })
+ 
+ document.getElementById("Search").addEventListener("keydown" , (event) => {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('search').value;
+  ul = document.getElementById("myUL");
+  let list = [];
+  let count = 0; 
+  
+  if (event.key == "Enter") {
+    if(isNaN(input)){
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `cases`)).then((snapshot) => {
 
+        var table = document.getElementById("table7");
+        if(table.rows.length>1){
+          for(var i = table.rows.length-1;i>=1;i--){
+            table.deleteRow(i);
+  
+          }
+        }
+        
+
+        var myModal = new bootstrap.Modal(document.getElementById("exampleModal6"), {});
+        myModal.show();
+        if (snapshot.exists()) {
+          snapshot.forEach(snapshot => {
+            if ( input == snapshot.child("company_name").val() || input == snapshot.child("name").val() ) {
+              count++;
+              
+              var row = table.insertRow();
+              var cell = row.insertCell();
+              cell.innerHTML = count;
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("case_number").val();
+              let case_num = snapshot.child("case_number").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("case_type").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("curr_Level").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("name").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("company_name").val();
+              var cell = row.insertCell();
+
+              
+              var nextBt = document.createElement("button");
+              nextBt.type = "button";
+              nextBt.className ="btn btn-success"
+              nextBt.textContent = "קידום שלב";
+              nextBt.classList.add("btn-next");
+              nextBt.id="next_lev-"+count;
+              nextBt.addEventListener("click",function(){
+                //change curr level in the table
+                let text = this.id;
+                console.log(text);
+                const myArray = text.split("-");
+                var currlev = parseInt(document.getElementById('table7').rows[myArray[1]].cells[3].innerHTML);
+                let levels = snapshot.child("levels").val();
+                if(levels==currlev){
+                  alert("לא ניתן לקדם שלב הגעת אל השלב המקסימלי עבור תיק זה")
+                }
+                else{
+                  currlev++;
+                  document.getElementById('table7').rows[myArray[1]].cells[3].innerHTML = currlev;
+                // end change
+    
+                // update the database
+    
+                let casenum = snapshot.child("case_number").val();
+                let kind = snapshot.child("case_type").val();
+                let cname = snapshot.child("name").val();
+                let company_name = snapshot.child("company_name").val();
+                let phone = snapshot.child("phone_num").val();
+                let curr_level = currlev;
+                let disc01 = snapshot.child("discreption01").val();
+                let tag = snapshot.child("tag").val();
+                
+                const dbRef = ref(getDatabase());
+                get(child(dbRef, `cases_type/${kind}`)).then((snapshot) => {
+                  if (snapshot.exists()) {
+                    let levels = snapshot.child("case_level").val();
+                    if (levels == "1") {
+                      writeUserData(kind, casenum, cname, phone, disc01, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "2") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      writeUserData02(kind, casenum, cname, phone, disc01, disc02, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "3") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();;
+                      writeUserData03(kind, casenum, cname, phone, disc01, disc02, disc03, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "4") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      writeUserData04(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "5") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      let disc05 = snapshot.child("discreption05").val();
+                      writeUserData05(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "6") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        writeUserData06(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "7") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      let disc05 = snapshot.child("discreption05").val();
+                      let disc06 = snapshot.child("discreption06").val();
+                      let disc07 = snapshot.child("discreption07").val();
+                      writeUserData07(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "8") {
+    
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        writeUserData08(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06 , disc07, disc08, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "9") {
+                      
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        writeUserData09(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "10") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        writeUserData10(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, discrp10, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "11") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        writeUserData11(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "12") {
+                      
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        writeUserData12(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "13") {
+                     
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        let disc13 = snapshot.child("discreption013").val();
+                        writeUserData13(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "14") {
+                     
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        let disc13 = snapshot.child("discreption013").val();
+                        let disc14 = snapshot.child("discreption014").val();
+                        writeUserData14(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, disc14, levels, curr_level,company_name,tag);
+                      
+                    }
+                  } else {
+                    console.log("No data available");
+                  }
+                }).catch((error) => {
+                  console.error(error);
+                })
+    
+                }
+                
+            
+                
+                
+    
+              });
+              cell.appendChild(nextBt);
+
+
+
+              var editBt = document.createElement("button");
+              editBt.type = "button";
+              editBt.className ="btn btn-warning"
+              editBt.textContent = "עריכה";
+              editBt.classList.add("btn-edit");
+              editBt.id="edit"+count;
+              editBt.style.marginRight = "10px";
+              editBt.addEventListener("click", function(){
+                var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
+                myModal.show();
+                document.getElementById('case1').value = snapshot.child("case_number").val();
+                document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
+                document.getElementById('client_name1').value = snapshot.child("name").val();
+                document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
+                document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+                document.getElementById('company_name1').value = snapshot.child("company_name").val();
+                if(snapshot.child("levels").val() == '1') {
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                }
+                if(snapshot.child("levels").val() == '2') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                }
+                if(snapshot.child("levels").val() == '3') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                }
+                if(snapshot.child("levels").val() == '4') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                }
+                if(snapshot.child("levels").val() == '5') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                }
+                if(snapshot.child("levels").val() == '6') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                }
+                if(snapshot.child("levels").val() == '7') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                }
+                if(snapshot.child("levels").val() == '8') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                }
+                if(snapshot.child("levels").val() == '9') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                }
+                if(snapshot.child("levels").val() == '10') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                }
+                if(snapshot.child("levels").val() == '11') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  
+                }
+                if(snapshot.child("levels").val() == '12') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                }
+                if(snapshot.child("levels").val() == '13') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementsByName('b13')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                  document.getElementById('discre13').value = snapshot.child("discreption13").val();
+                }
+                if(snapshot.child("levels").val() == '14') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementsByName('b13')[0].hidden = false;
+                  document.getElementsByName('b14')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                  document.getElementById('discre13').value = snapshot.child("discreption13").val();
+                  document.getElementById('discre14').value = snapshot.child("discreption14").val();
+                }
+              });
+              cell.appendChild(editBt);
+              var delbtn = document.createElement("button");
+              delbtn.type = "button";
+              delbtn.className ="btn btn-danger"
+              delbtn.textContent = "מחיקה";
+              delbtn.classList.add("btn-delete");
+              delbtn.id="del" + count;
+              delbtn.style.marginRight = "10px";
+              delbtn.addEventListener("click", async function(){
+                const db = getDatabase();
+                const dbRef1 = ref(db, "/cases/" + case_num);
+                remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));
+              });
+              cell.appendChild(delbtn);
+            }
+          });
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      })
+    }
+    else{
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `cases/${input}`)).then((snapshot) => {
+        if (snapshot.exists()) {    
+          var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
+          myModal.show();
+
+          document.getElementsByName('b02')[0].hidden = true;
+          document.getElementsByName('b03')[0].hidden = true;
+          document.getElementsByName('b04')[0].hidden = true;
+          document.getElementsByName('b05')[0].hidden = true;
+          document.getElementsByName('b06')[0].hidden = true;
+          document.getElementsByName('b07')[0].hidden = true;
+          document.getElementsByName('b08')[0].hidden = true;
+          document.getElementsByName('b09')[0].hidden = true;
+          document.getElementsByName('b10')[0].hidden = true;
+          document.getElementsByName('b11')[0].hidden = true;
+          document.getElementsByName('b12')[0].hidden = true;
+          document.getElementsByName('b13')[0].hidden = true;
+          document.getElementsByName('b14')[0].hidden = true;
+          
+ 
+          document.getElementById('case1').value = snapshot.child("case_number").val();
+          document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
+          document.getElementById('client_name1').value = snapshot.child("name").val();
+          document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
+          document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+          document.getElementById('company_name1').value = snapshot.child("company_name").val();
+          if(snapshot.child("levels").val() == '1') {
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+          }
+          if(snapshot.child("levels").val() == '2') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+          }
+          if(snapshot.child("levels").val() == '3') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+          }
+          if(snapshot.child("levels").val() == '4') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+          }
+          if(snapshot.child("levels").val() == '5') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+          }
+          if(snapshot.child("levels").val() == '6') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+          }
+          if(snapshot.child("levels").val() == '7') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+          }
+          if(snapshot.child("levels").val() == '8') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+          }
+          if(snapshot.child("levels").val() == '9') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+          }
+          if(snapshot.child("levels").val() == '10') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+          }
+          if(snapshot.child("levels").val() == '11') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            
+          }
+          if(snapshot.child("levels").val() == '12') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+          }
+          if(snapshot.child("levels").val() == '13') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementsByName('b13')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+            document.getElementById('discre13').value = snapshot.child("discreption13").val();
+          }
+          if(snapshot.child("levels").val() == '14') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementsByName('b13')[0].hidden = false;
+            document.getElementsByName('b14')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+            document.getElementById('discre13').value = snapshot.child("discreption13").val();
+            document.getElementById('discre14').value = snapshot.child("discreption14").val();
+          }
+
+
+
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      })
+    }
+
+  }
+
+ })
+
+ document.getElementById("Search1").addEventListener("keydown" , (event) => {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('search1').value;
+  ul = document.getElementById("myUL");
+  let count = 0; 
+  
+  if (event.key == "Enter") {
+    if(isNaN(input)){
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `cases`)).then((snapshot) => {
+
+
+        var table = document.getElementById("table7");
+        if(table.rows.length>1){
+          for(var i = table.rows.length-1;i>=1;i--){
+            table.deleteRow(i);
+  
+          }
+        }
+        var myModal = new bootstrap.Modal(document.getElementById("exampleModal6"), {});
+        myModal.show();
+        if (snapshot.exists()) {
+          snapshot.forEach(snapshot => {
+            if ( input == snapshot.child("company_name").val() || input == snapshot.child("name").val() ) {
+              count++;
+              var row = table.insertRow();
+              var cell = row.insertCell();
+              cell.innerHTML = count;
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("case_number").val();
+              let case_num = snapshot.child("case_number").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("case_type").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("curr_Level").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("name").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("company_name").val();
+              var cell = row.insertCell();
+
+                  
+              var nextBt = document.createElement("button");
+              nextBt.type = "button";
+              nextBt.className ="btn btn-success"
+              nextBt.textContent = "קידום שלב";
+              nextBt.classList.add("btn-next");
+              nextBt.id="next_lev-"+count;
+              nextBt.addEventListener("click",function(){
+                //change curr level in the table
+                let text = this.id;
+                console.log(text);
+                const myArray = text.split("-");
+                var currlev = parseInt(document.getElementById('table7').rows[myArray[1]].cells[3].innerHTML);
+                let levels = snapshot.child("levels").val();
+                if(levels==currlev){
+                  alert("לא ניתן לקדם שלב הגעת אל השלב המקסימלי עבור תיק זה")
+                }
+                else{
+                  currlev++;
+                  document.getElementById('table7').rows[myArray[1]].cells[3].innerHTML = currlev;
+                // end change
+    
+                // update the database
+    
+                let casenum = snapshot.child("case_number").val();
+                let kind = snapshot.child("case_type").val();
+                let cname = snapshot.child("name").val();
+                let company_name = snapshot.child("company_name").val();
+                let phone = snapshot.child("phone_num").val();
+                let curr_level = currlev;
+                let disc01 = snapshot.child("discreption01").val();
+                let tag = snapshot.child("tag").val();
+                
+                const dbRef = ref(getDatabase());
+                get(child(dbRef, `cases_type/${kind}`)).then((snapshot) => {
+                  if (snapshot.exists()) {
+                    let levels = snapshot.child("case_level").val();
+                    if (levels == "1") {
+                      writeUserData(kind, casenum, cname, phone, disc01, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "2") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      writeUserData02(kind, casenum, cname, phone, disc01, disc02, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "3") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();;
+                      writeUserData03(kind, casenum, cname, phone, disc01, disc02, disc03, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "4") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      writeUserData04(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "5") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      let disc05 = snapshot.child("discreption05").val();
+                      writeUserData05(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "6") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        writeUserData06(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "7") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      let disc05 = snapshot.child("discreption05").val();
+                      let disc06 = snapshot.child("discreption06").val();
+                      let disc07 = snapshot.child("discreption07").val();
+                      writeUserData07(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "8") {
+    
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        writeUserData08(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06 , disc07, disc08, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "9") {
+                      
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        writeUserData09(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "10") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        writeUserData10(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, discrp10, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "11") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        writeUserData11(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "12") {
+                      
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        writeUserData12(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "13") {
+                     
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        let disc13 = snapshot.child("discreption013").val();
+                        writeUserData13(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "14") {
+                     
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        let disc13 = snapshot.child("discreption013").val();
+                        let disc14 = snapshot.child("discreption014").val();
+                        writeUserData14(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, disc14, levels, curr_level,company_name,tag);
+                      
+                    }
+                  } else {
+                    console.log("No data available");
+                  }
+                }).catch((error) => {
+                  console.error(error);
+                })
+    
+                }
+                
+            
+                
+                
+    
+              });
+              cell.appendChild(nextBt);
+
+
+
+
+              var editBt = document.createElement("button");
+              editBt.type = "button";
+              editBt.className ="btn btn-warning"
+              editBt.textContent = "עריכה";
+              editBt.classList.add("btn-edit");
+              editBt.id="edit"+count;
+              editBt.style.marginRight = "10px";
+              editBt.addEventListener("click", function(){
+                var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
+                myModal.show();
+                document.getElementById('case1').value = snapshot.child("case_number").val();
+                document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
+                document.getElementById('client_name1').value = snapshot.child("name").val();
+                document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
+                document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+                if(snapshot.child("levels").val() == '1') {
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                }
+                if(snapshot.child("levels").val() == '2') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                }
+                if(snapshot.child("levels").val() == '3') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                }
+                if(snapshot.child("levels").val() == '4') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                }
+                if(snapshot.child("levels").val() == '5') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                }
+                if(snapshot.child("levels").val() == '6') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                }
+                if(snapshot.child("levels").val() == '7') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                }
+                if(snapshot.child("levels").val() == '8') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                }
+                if(snapshot.child("levels").val() == '9') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                }
+                if(snapshot.child("levels").val() == '10') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                }
+                if(snapshot.child("levels").val() == '11') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  
+                }
+                if(snapshot.child("levels").val() == '12') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                }
+                if(snapshot.child("levels").val() == '13') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementsByName('b13')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                  document.getElementById('discre13').value = snapshot.child("discreption13").val();
+                }
+                if(snapshot.child("levels").val() == '14') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementsByName('b13')[0].hidden = false;
+                  document.getElementsByName('b14')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                  document.getElementById('discre13').value = snapshot.child("discreption13").val();
+                  document.getElementById('discre14').value = snapshot.child("discreption14").val();
+                }
+              });
+              cell.appendChild(editBt);
+              var delbtn = document.createElement("button");
+              delbtn.type = "button";
+              delbtn.className ="btn btn-danger"
+              delbtn.textContent = "מחיקה";
+              delbtn.classList.add("btn-delete");
+              delbtn.id="del" + count;
+              delbtn.style.marginRight = "10px";
+              delbtn.addEventListener("click", async function(){
+                const db = getDatabase();
+                const dbRef1 = ref(db, "/cases/" + case_num);
+                remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));
+              });
+              cell.appendChild(delbtn);
+            }
+          });
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      })
+    }
+    else{
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `cases/${input}`)).then((snapshot) => {
+        if (snapshot.exists()) {    
+          var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
+          myModal.show();
+          document.getElementById('case1').value = snapshot.child("case_number").val();
+          document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
+          document.getElementById('client_name1').value = snapshot.child("name").val();
+          document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
+          document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+          document.getElementById('company_name1').value = snapshot.child("company_name").val();
+
+
+          document.getElementsByName('b02')[0].hidden = true;
+          document.getElementsByName('b03')[0].hidden = true;
+          document.getElementsByName('b04')[0].hidden = true;
+          document.getElementsByName('b05')[0].hidden = true;
+          document.getElementsByName('b06')[0].hidden = true;
+          document.getElementsByName('b07')[0].hidden = true;
+          document.getElementsByName('b08')[0].hidden = true;
+          document.getElementsByName('b09')[0].hidden = true;
+          document.getElementsByName('b10')[0].hidden = true;
+          document.getElementsByName('b11')[0].hidden = true;
+          document.getElementsByName('b12')[0].hidden = true;
+          document.getElementsByName('b13')[0].hidden = true;
+          document.getElementsByName('b14')[0].hidden = true;
+
+
+
+
+          if(snapshot.child("levels").val() == '1') {
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+          }
+          if(snapshot.child("levels").val() == '2') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+          }
+          if(snapshot.child("levels").val() == '3') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+          }
+          if(snapshot.child("levels").val() == '4') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+          }
+          if(snapshot.child("levels").val() == '5') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+          }
+          if(snapshot.child("levels").val() == '6') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+          }
+          if(snapshot.child("levels").val() == '7') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+          }
+          if(snapshot.child("levels").val() == '8') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+          }
+          if(snapshot.child("levels").val() == '9') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+          }
+          if(snapshot.child("levels").val() == '10') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+          }
+          if(snapshot.child("levels").val() == '11') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            
+          }
+          if(snapshot.child("levels").val() == '12') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+          }
+          if(snapshot.child("levels").val() == '13') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementsByName('b13')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+            document.getElementById('discre13').value = snapshot.child("discreption13").val();
+          }
+          if(snapshot.child("levels").val() == '14') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementsByName('b13')[0].hidden = false;
+            document.getElementsByName('b14')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+            document.getElementById('discre13').value = snapshot.child("discreption13").val();
+            document.getElementById('discre14').value = snapshot.child("discreption14").val();
+          }
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      })
+    }
+
+  }
+
+ })
+
+ document.getElementById("Search2").addEventListener("keydown" , (event) => {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('search2').value;
+  ul = document.getElementById("myUL");
+  let count = 0; 
+  
+  if (event.key == "Enter") {
+    if(isNaN(input)){
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `cases`)).then((snapshot) => {
+
+        var table = document.getElementById("table7");
+        if(table.rows.length>1){
+          for(var i = table.rows.length-1;i>=1;i--){
+            table.deleteRow(i);
+  
+          }
+        }
+
+        var myModal = new bootstrap.Modal(document.getElementById("exampleModal6"), {});
+        myModal.show();
+        if (snapshot.exists()) {
+          snapshot.forEach(snapshot => {
+            if ( input == snapshot.child("company_name").val() || input == snapshot.child("name").val() ) {
+              count++;
+              var row = table.insertRow();
+              var cell = row.insertCell();
+              cell.innerHTML = count;
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("case_number").val();
+              let case_num = snapshot.child("case_number").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("case_type").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("curr_Level").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("name").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("company_name").val();
+              var cell = row.insertCell();
+
+
+              var nextBt = document.createElement("button");
+              nextBt.type = "button";
+              nextBt.className ="btn btn-success"
+              nextBt.textContent = "קידום שלב";
+              nextBt.classList.add("btn-next");
+              nextBt.id="next_lev-"+count;
+              nextBt.addEventListener("click",function(){
+                //change curr level in the table
+                let text = this.id;
+                console.log(text);
+                const myArray = text.split("-");
+                var currlev = parseInt(document.getElementById('table7').rows[myArray[1]].cells[3].innerHTML);
+                let levels = snapshot.child("levels").val();
+                if(levels==currlev){
+                  alert("לא ניתן לקדם שלב הגעת אל השלב המקסימלי עבור תיק זה")
+                }
+                else{
+                  currlev++;
+                  document.getElementById('table7').rows[myArray[1]].cells[3].innerHTML = currlev;
+                // end change
+    
+                // update the database
+    
+                let casenum = snapshot.child("case_number").val();
+                let kind = snapshot.child("case_type").val();
+                let cname = snapshot.child("name").val();
+                let company_name = snapshot.child("company_name").val();
+                let phone = snapshot.child("phone_num").val();
+                let curr_level = currlev;
+                let disc01 = snapshot.child("discreption01").val();
+                let tag = snapshot.child("tag").val();
+                
+                const dbRef = ref(getDatabase());
+                get(child(dbRef, `cases_type/${kind}`)).then((snapshot) => {
+                  if (snapshot.exists()) {
+                    let levels = snapshot.child("case_level").val();
+                    if (levels == "1") {
+                      writeUserData(kind, casenum, cname, phone, disc01, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "2") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      writeUserData02(kind, casenum, cname, phone, disc01, disc02, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "3") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();;
+                      writeUserData03(kind, casenum, cname, phone, disc01, disc02, disc03, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "4") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      writeUserData04(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "5") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      let disc05 = snapshot.child("discreption05").val();
+                      writeUserData05(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "6") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        writeUserData06(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "7") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      let disc05 = snapshot.child("discreption05").val();
+                      let disc06 = snapshot.child("discreption06").val();
+                      let disc07 = snapshot.child("discreption07").val();
+                      writeUserData07(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "8") {
+    
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        writeUserData08(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06 , disc07, disc08, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "9") {
+                      
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        writeUserData09(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "10") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        writeUserData10(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, discrp10, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "11") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        writeUserData11(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "12") {
+                      
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        writeUserData12(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "13") {
+                     
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        let disc13 = snapshot.child("discreption013").val();
+                        writeUserData13(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "14") {
+                     
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        let disc13 = snapshot.child("discreption013").val();
+                        let disc14 = snapshot.child("discreption014").val();
+                        writeUserData14(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, disc14, levels, curr_level,company_name,tag);
+                      
+                    }
+                  } else {
+                    console.log("No data available");
+                  }
+                }).catch((error) => {
+                  console.error(error);
+                })
+    
+                }
+                
+            
+                
+                
+    
+              });
+              cell.appendChild(nextBt);
+
+              var editBt = document.createElement("button");
+              editBt.type = "button";
+              editBt.className ="btn btn-warning"
+              editBt.textContent = "עריכה";
+              editBt.classList.add("btn-edit");
+              editBt.id="edit"+count;
+              editBt.style.marginRight = "10px";
+              editBt.addEventListener("click", function(){
+                var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
+                myModal.show();
+                document.getElementById('case1').value = snapshot.child("case_number").val();
+                document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
+                document.getElementById('client_name1').value = snapshot.child("name").val();
+                document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
+                document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+                if(snapshot.child("levels").val() == '1') {
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                }
+                if(snapshot.child("levels").val() == '2') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                }
+                if(snapshot.child("levels").val() == '3') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                }
+                if(snapshot.child("levels").val() == '4') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                }
+                if(snapshot.child("levels").val() == '5') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                }
+                if(snapshot.child("levels").val() == '6') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                }
+                if(snapshot.child("levels").val() == '7') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                }
+                if(snapshot.child("levels").val() == '8') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                }
+                if(snapshot.child("levels").val() == '9') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                }
+                if(snapshot.child("levels").val() == '10') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                }
+                if(snapshot.child("levels").val() == '11') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  
+                }
+                if(snapshot.child("levels").val() == '12') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                }
+                if(snapshot.child("levels").val() == '13') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementsByName('b13')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                  document.getElementById('discre13').value = snapshot.child("discreption13").val();
+                }
+                if(snapshot.child("levels").val() == '14') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementsByName('b13')[0].hidden = false;
+                  document.getElementsByName('b14')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                  document.getElementById('discre13').value = snapshot.child("discreption13").val();
+                  document.getElementById('discre14').value = snapshot.child("discreption14").val();
+                }
+              });
+              cell.appendChild(editBt);
+              var delbtn = document.createElement("button");
+              delbtn.type = "button";
+              delbtn.className ="btn btn-danger"
+              delbtn.textContent = "מחיקה";
+              delbtn.classList.add("btn-delete");
+              delbtn.id="del" + count;
+              delbtn.style.marginRight = "10px";
+              delbtn.addEventListener("click", async function(){
+                const db = getDatabase();
+                const dbRef1 = ref(db, "/cases/" + case_num);
+                remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));
+              });
+              cell.appendChild(delbtn);
+            }
+          });
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      })
+    }
+    else{
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `cases/${input}`)).then((snapshot) => {
+        if (snapshot.exists()) {    
+          var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
+          myModal.show();
+          document.getElementById('case1').value = snapshot.child("case_number").val();
+          document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
+          document.getElementById('client_name1').value = snapshot.child("name").val();
+          document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
+          document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+          document.getElementById('company_name1').value = snapshot.child("company_name").val();
+
+
+          document.getElementsByName('b02')[0].hidden = true;
+          document.getElementsByName('b03')[0].hidden = true;
+          document.getElementsByName('b04')[0].hidden = true;
+          document.getElementsByName('b05')[0].hidden = true;
+          document.getElementsByName('b06')[0].hidden = true;
+          document.getElementsByName('b07')[0].hidden = true;
+          document.getElementsByName('b08')[0].hidden = true;
+          document.getElementsByName('b09')[0].hidden = true;
+          document.getElementsByName('b10')[0].hidden = true;
+          document.getElementsByName('b11')[0].hidden = true;
+          document.getElementsByName('b12')[0].hidden = true;
+          document.getElementsByName('b13')[0].hidden = true;
+          document.getElementsByName('b14')[0].hidden = true;
+
+
+          if(snapshot.child("levels").val() == '1') {
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+          }
+          if(snapshot.child("levels").val() == '2') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+          }
+          if(snapshot.child("levels").val() == '3') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+          }
+          if(snapshot.child("levels").val() == '4') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+          }
+          if(snapshot.child("levels").val() == '5') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+          }
+          if(snapshot.child("levels").val() == '6') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+          }
+          if(snapshot.child("levels").val() == '7') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+          }
+          if(snapshot.child("levels").val() == '8') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+          }
+          if(snapshot.child("levels").val() == '9') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+          }
+          if(snapshot.child("levels").val() == '10') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+          }
+          if(snapshot.child("levels").val() == '11') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            
+          }
+          if(snapshot.child("levels").val() == '12') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+          }
+          if(snapshot.child("levels").val() == '13') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementsByName('b13')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+            document.getElementById('discre13').value = snapshot.child("discreption13").val();
+          }
+          if(snapshot.child("levels").val() == '14') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementsByName('b13')[0].hidden = false;
+            document.getElementsByName('b14')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+            document.getElementById('discre13').value = snapshot.child("discreption13").val();
+            document.getElementById('discre14').value = snapshot.child("discreption14").val();
+          }
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      })
+    }
+
+  }
+
+ })
+
+ document.getElementById("Search3").addEventListener("keydown" , (event) => {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('search3').value;
+  ul = document.getElementById("myUL");
+  let count = 0; 
+  
+  if (event.key == "Enter") {
+    if(isNaN(input)){
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `cases`)).then((snapshot) => {
+
+        var table = document.getElementById("table7");
+        if(table.rows.length>1){
+          for(var i = table.rows.length-1;i>=1;i--){
+            table.deleteRow(i);
+  
+          }
+        }
+        var myModal = new bootstrap.Modal(document.getElementById("exampleModal6"), {});
+        myModal.show();
+        if (snapshot.exists()) {
+          snapshot.forEach(snapshot => {
+            if ( input == snapshot.child("company_name").val() || input == snapshot.child("name").val() ) {
+              count++;
+              var row = table.insertRow();
+              var cell = row.insertCell();
+              cell.innerHTML = count;
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("case_number").val();
+              let case_num = snapshot.child("case_number").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("case_type").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("curr_Level").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("name").val();
+              var cell = row.insertCell();
+              cell.innerHTML = snapshot.child("company_name").val();
+              var cell = row.insertCell();
+
+              var nextBt = document.createElement("button");
+              nextBt.type = "button";
+              nextBt.className ="btn btn-success"
+              nextBt.textContent = "קידום שלב";
+              nextBt.classList.add("btn-next");
+              nextBt.id="next_lev-"+count;
+              nextBt.addEventListener("click",function(){
+                //change curr level in the table
+                let text = this.id;
+                console.log(text);
+                const myArray = text.split("-");
+                var currlev = parseInt(document.getElementById('table7').rows[myArray[1]].cells[3].innerHTML);
+                let levels = snapshot.child("levels").val();
+                if(levels==currlev){
+                  alert("לא ניתן לקדם שלב הגעת אל השלב המקסימלי עבור תיק זה")
+                }
+                else{
+                  currlev++;
+                  document.getElementById('table7').rows[myArray[1]].cells[3].innerHTML = currlev;
+                // end change
+    
+                // update the database
+    
+                let casenum = snapshot.child("case_number").val();
+                let kind = snapshot.child("case_type").val();
+                let cname = snapshot.child("name").val();
+                let company_name = snapshot.child("company_name").val();
+                let phone = snapshot.child("phone_num").val();
+                let curr_level = currlev;
+                let disc01 = snapshot.child("discreption01").val();
+                let tag = snapshot.child("tag").val();
+                
+                const dbRef = ref(getDatabase());
+                get(child(dbRef, `cases_type/${kind}`)).then((snapshot) => {
+                  if (snapshot.exists()) {
+                    let levels = snapshot.child("case_level").val();
+                    if (levels == "1") {
+                      writeUserData(kind, casenum, cname, phone, disc01, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "2") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      writeUserData02(kind, casenum, cname, phone, disc01, disc02, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "3") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();;
+                      writeUserData03(kind, casenum, cname, phone, disc01, disc02, disc03, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "4") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      writeUserData04(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "5") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      let disc05 = snapshot.child("discreption05").val();
+                      writeUserData05(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "6") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        writeUserData06(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "7") {
+                      let disc02 = snapshot.child("discreption02").val();
+                      let disc03 = snapshot.child("discreption03").val();
+                      let disc04 = snapshot.child("discreption04").val();
+                      let disc05 = snapshot.child("discreption05").val();
+                      let disc06 = snapshot.child("discreption06").val();
+                      let disc07 = snapshot.child("discreption07").val();
+                      writeUserData07(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "8") {
+    
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        writeUserData08(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06 , disc07, disc08, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "9") {
+                      
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        writeUserData09(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, levels, curr_level,company_name,tag);
+                    }
+                    if (levels == "10") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        writeUserData10(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, discrp10, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "11") {
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        writeUserData11(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "12") {
+                      
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        writeUserData12(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "13") {
+                     
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        let disc13 = snapshot.child("discreption013").val();
+                        writeUserData13(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, levels, curr_level,company_name,tag);
+                      
+                    }
+                    if (levels == "14") {
+                     
+                        let disc02 = snapshot.child("discreption02").val();
+                        let disc03 = snapshot.child("discreption03").val();
+                        let disc04 = snapshot.child("discreption04").val();
+                        let disc05 = snapshot.child("discreption05").val();
+                        let disc06 = snapshot.child("discreption06").val();
+                        let disc07 = snapshot.child("discreption07").val();
+                        let disc08 = snapshot.child("discreption08").val();
+                        let disc09 = snapshot.child("discreption09").val();
+                        let disc10 = snapshot.child("discreption010").val();
+                        let disc11 = snapshot.child("discreption011").val();
+                        let disc12 = snapshot.child("discreption012").val();
+                        let disc13 = snapshot.child("discreption013").val();
+                        let disc14 = snapshot.child("discreption014").val();
+                        writeUserData14(kind, casenum, cname, phone, disc01, disc02, disc03, disc04, disc05, disc06, disc07, disc08, disc09, disc10, disc11, disc12, disc13, disc14, levels, curr_level,company_name,tag);
+                      
+                    }
+                  } else {
+                    console.log("No data available");
+                  }
+                }).catch((error) => {
+                  console.error(error);
+                })
+    
+                }
+                
+            
+                
+                
+    
+              });
+              cell.appendChild(nextBt);
+
+              var editBt = document.createElement("button");
+              editBt.type = "button";
+              editBt.className ="btn btn-warning"
+              editBt.textContent = "עריכה";
+              editBt.classList.add("btn-edit");
+              editBt.id="edit"+count;
+              editBt.style.marginRight = "10px";
+              editBt.addEventListener("click", function(){
+                var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
+                myModal.show();
+                document.getElementById('case1').value = snapshot.child("case_number").val();
+                document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
+                document.getElementById('client_name1').value = snapshot.child("name").val();
+                document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
+                document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+
+                document.getElementsByName('b02')[0].hidden = true;
+                document.getElementsByName('b03')[0].hidden = true;
+                document.getElementsByName('b04')[0].hidden = true;
+                document.getElementsByName('b05')[0].hidden = true;
+                document.getElementsByName('b06')[0].hidden = true;
+                document.getElementsByName('b07')[0].hidden = true;
+                document.getElementsByName('b08')[0].hidden = true;
+                document.getElementsByName('b09')[0].hidden = true;
+                document.getElementsByName('b10')[0].hidden = true;
+                document.getElementsByName('b11')[0].hidden = true;
+                document.getElementsByName('b12')[0].hidden = true;
+                document.getElementsByName('b13')[0].hidden = true;
+                document.getElementsByName('b14')[0].hidden = true;
+
+
+                if(snapshot.child("levels").val() == '1') {
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                }
+                if(snapshot.child("levels").val() == '2') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                }
+                if(snapshot.child("levels").val() == '3') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                }
+                if(snapshot.child("levels").val() == '4') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                }
+                if(snapshot.child("levels").val() == '5') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                }
+                if(snapshot.child("levels").val() == '6') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                }
+                if(snapshot.child("levels").val() == '7') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                }
+                if(snapshot.child("levels").val() == '8') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                }
+                if(snapshot.child("levels").val() == '9') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                }
+                if(snapshot.child("levels").val() == '10') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                }
+                if(snapshot.child("levels").val() == '11') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  
+                }
+                if(snapshot.child("levels").val() == '12') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                }
+                if(snapshot.child("levels").val() == '13') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementsByName('b13')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                  document.getElementById('discre13').value = snapshot.child("discreption13").val();
+                }
+                if(snapshot.child("levels").val() == '14') {
+                  document.getElementsByName('b02')[0].hidden = false;
+                  document.getElementsByName('b03')[0].hidden = false;
+                  document.getElementsByName('b04')[0].hidden = false;
+                  document.getElementsByName('b05')[0].hidden = false;
+                  document.getElementsByName('b06')[0].hidden = false;
+                  document.getElementsByName('b07')[0].hidden = false;
+                  document.getElementsByName('b08')[0].hidden = false;
+                  document.getElementsByName('b09')[0].hidden = false;
+                  document.getElementsByName('b10')[0].hidden = false;
+                  document.getElementsByName('b11')[0].hidden = false;
+                  document.getElementsByName('b12')[0].hidden = false;
+                  document.getElementsByName('b13')[0].hidden = false;
+                  document.getElementsByName('b14')[0].hidden = false;
+                  document.getElementById('discre01').value = snapshot.child("discreption01").val();
+                  document.getElementById('discre02').value = snapshot.child("discreption02").val();
+                  document.getElementById('discre03').value = snapshot.child("discreption03").val();
+                  document.getElementById('discre04').value = snapshot.child("discreption04").val();
+                  document.getElementById('discre05').value = snapshot.child("discreption05").val();
+                  document.getElementById('discre06').value = snapshot.child("discreption06").val();
+                  document.getElementById('discre07').value = snapshot.child("discreption07").val();
+                  document.getElementById('discre08').value = snapshot.child("discreption08").val();
+                  document.getElementById('discre09').value = snapshot.child("discreption09").val();
+                  document.getElementById('discre10').value = snapshot.child("discreption10").val();
+                  document.getElementById('discre11').value = snapshot.child("discreption11").val();
+                  document.getElementById('discre12').value = snapshot.child("discreption12").val();
+                  document.getElementById('discre13').value = snapshot.child("discreption13").val();
+                  document.getElementById('discre14').value = snapshot.child("discreption14").val();
+                }
+              });
+              cell.appendChild(editBt);
+              var delbtn = document.createElement("button");
+              delbtn.type = "button";
+              delbtn.className ="btn btn-danger"
+              delbtn.textContent = "מחיקה";
+              delbtn.classList.add("btn-delete");
+              delbtn.id="del" + count;
+              delbtn.style.marginRight = "10px";
+              delbtn.addEventListener("click", async function(){
+                const db = getDatabase();
+                const dbRef1 = ref(db, "/cases/" + case_num);
+                remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));
+              });
+              cell.appendChild(delbtn);
+            }
+          });
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      })
+    }
+    else{
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `cases/${input}`)).then((snapshot) => {
+        if (snapshot.exists()) {    
+          var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
+          myModal.show();
+          document.getElementById('case1').value = snapshot.child("case_number").val();
+          document.getElementById('case_type_update1').value = snapshot.child("case_type").val();
+          document.getElementById('client_name1').value = snapshot.child("name").val();
+          document.getElementById('phone_number1').value = snapshot.child("phone_num").val();
+          document.getElementById('curr_level1').value = snapshot.child("curr_Level").val();
+          document.getElementById('company_name1').value = snapshot.child("company_name").val();
+          if(snapshot.child("levels").val() == '1') {
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+          }
+          if(snapshot.child("levels").val() == '2') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+          }
+          if(snapshot.child("levels").val() == '3') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+          }
+          if(snapshot.child("levels").val() == '4') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+          }
+          if(snapshot.child("levels").val() == '5') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+          }
+          if(snapshot.child("levels").val() == '6') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+          }
+          if(snapshot.child("levels").val() == '7') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+          }
+          if(snapshot.child("levels").val() == '8') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+          }
+          if(snapshot.child("levels").val() == '9') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+          }
+          if(snapshot.child("levels").val() == '10') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+          }
+          if(snapshot.child("levels").val() == '11') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            
+          }
+          if(snapshot.child("levels").val() == '12') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+          }
+          if(snapshot.child("levels").val() == '13') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementsByName('b13')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+            document.getElementById('discre13').value = snapshot.child("discreption13").val();
+          }
+          if(snapshot.child("levels").val() == '14') {
+            document.getElementsByName('b02')[0].hidden = false;
+            document.getElementsByName('b03')[0].hidden = false;
+            document.getElementsByName('b04')[0].hidden = false;
+            document.getElementsByName('b05')[0].hidden = false;
+            document.getElementsByName('b06')[0].hidden = false;
+            document.getElementsByName('b07')[0].hidden = false;
+            document.getElementsByName('b08')[0].hidden = false;
+            document.getElementsByName('b09')[0].hidden = false;
+            document.getElementsByName('b10')[0].hidden = false;
+            document.getElementsByName('b11')[0].hidden = false;
+            document.getElementsByName('b12')[0].hidden = false;
+            document.getElementsByName('b13')[0].hidden = false;
+            document.getElementsByName('b14')[0].hidden = false;
+            document.getElementById('discre01').value = snapshot.child("discreption01").val();
+            document.getElementById('discre02').value = snapshot.child("discreption02").val();
+            document.getElementById('discre03').value = snapshot.child("discreption03").val();
+            document.getElementById('discre04').value = snapshot.child("discreption04").val();
+            document.getElementById('discre05').value = snapshot.child("discreption05").val();
+            document.getElementById('discre06').value = snapshot.child("discreption06").val();
+            document.getElementById('discre07').value = snapshot.child("discreption07").val();
+            document.getElementById('discre08').value = snapshot.child("discreption08").val();
+            document.getElementById('discre09').value = snapshot.child("discreption09").val();
+            document.getElementById('discre10').value = snapshot.child("discreption10").val();
+            document.getElementById('discre11').value = snapshot.child("discreption11").val();
+            document.getElementById('discre12').value = snapshot.child("discreption12").val();
+            document.getElementById('discre13').value = snapshot.child("discreption13").val();
+            document.getElementById('discre14').value = snapshot.child("discreption14").val();
+          }
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      })
+    }
+
+  }
+
+ })
 
   document.getElementById("update").onclick = function(){
-    alert("update");
     let casenum = document.getElementById("case3").value;
     let kind = document.getElementById("case_type_update3").value;
     let cname = document.getElementById("client_name3").value;
@@ -9218,7 +13031,6 @@ const firebaseConfig = {
          tag = snapshot.child("tag").val();
         
       } else {
-      console.log("No data available");
       alert("לא נמצא תיק עם המספר שהזנת. ");
      }
     }).catch((error) => {
@@ -9582,8 +13394,7 @@ const firebaseConfig = {
                   tag = snapshot.child("tag").val();
                   
                 } else {
-                console.log("No data available");
-                alert("לא נמצא תיק עם המספר שהזנת. ");
+                alert("תיק אינו נמצא");
               }
               }).catch((error) => {
               console.error(error);
@@ -9779,7 +13590,6 @@ const firebaseConfig = {
 
       var update1 = document.getElementById("update1");
       update1.onclick = function(){
-        alert("update");
         let casenum = document.getElementById("case1").value;
         let kind = document.getElementById("case_type_update1").value;
         let cname = document.getElementById("client_name1").value;
@@ -10011,7 +13821,6 @@ const firebaseConfig = {
 
       var exit_new_case = document.getElementById("exit_newcase");
       exit_new_case.addEventListener("click",function(){
-        alert("exit1");
         var kind = document.getElementById('kind').value;
         document.getElementById("casenum").value ="";
         document.getElementById("cname").value ="";
@@ -10185,7 +13994,6 @@ const firebaseConfig = {
 
       var exit_update1 = document.getElementById("exit_update1");
       exit_update1.addEventListener("click",function(){
-        alert("exit_update1");
         var kind = document.getElementById('case_type_update1').value;
         document.getElementById("case1").value ="";
         document.getElementById("client_name1").value ="";
@@ -10355,7 +14163,6 @@ const firebaseConfig = {
 
       var exit_edit_case = document.getElementById("exitbt");
       exit_edit_case.addEventListener("click",function(){
-        alert("exit2");
         var kind = document.getElementById('case_type_update3').value;
         document.getElementById("case3").value ="";
         document.getElementById("client_name3").value ="";
@@ -10524,7 +14331,6 @@ const firebaseConfig = {
 
       var exit_manger = document.getElementById("exit_manger");
       exit_manger.addEventListener("click",function(){
-        alert("exit3");
         document.getElementById("email-admin").value ="";
         document.getElementById("password-admin").value ="";
         document.getElementById("firstname-admin").value ="";
@@ -10538,7 +14344,6 @@ const firebaseConfig = {
 
       var exit_add_case = document.getElementById("exit_add_case");
       exit_add_case.addEventListener("click",function(){
-        alert("exit4");
         // var levels = document.getElementById("levels").value();
         console.log(levels);
         const $select = document.querySelector('#levels');
@@ -11036,7 +14841,6 @@ const firebaseConfig = {
             editBt.addEventListener("click", function(){
               var myModal = new bootstrap.Modal(document.getElementById("exampleModal4"), {});
               myModal.show();
-              alert("modal 4");
               let text = this.id;
               const myArray = text.split("-");
               let case_num = document.getElementById('table9').rows[myArray[1]].cells[1].innerHTML
@@ -11483,15 +15287,6 @@ const firebaseConfig = {
               }).catch((error) => {
                 console.error(error);
               }) 
-
-
-
-              // const db = getDatabase();
-              // const dbRef1 = ref(db, "/cases/" + case_num);
-              // remove(dbRef1).then(() => alert(`תיק מספר ${case_num} נמחק בהצלחה`));
-              //end del from db
-  
-              // del from table and update table
               
               table.deleteRow(myArray[1]);
               for (let i = myArray[1]; i < table.rows.length; i++) {
@@ -11668,7 +15463,6 @@ const firebaseConfig = {
 
 
           } else {
-          console.log("No data available");
           alert("לא נמצא תיק עם המספר שהזנת. אנא נסה שנית");
          }
         }).catch((error) => {

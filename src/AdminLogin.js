@@ -74,7 +74,8 @@ class Login {
 import * as bootstrap from 'bootstrap'; 
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, child, get, remove} from "firebase/database";
-import { getAuth, RecaptchaVerifier, signInWithPhoneNumber} from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -89,66 +90,18 @@ const firebaseConfig = {
   };
   
   const app = initializeApp(firebaseConfig);
-  export const auth = getAuth(app);
 
-  function GenerateRecaptch(){
-	window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
-	  'size': 'invisible',
-	  'callback': (response) => {
-  
-	  }
-	}, auth);
-  }
+document.getElementById("login-btn").onclick = function(){
+	let username = document.getElementById("username").value;
+	let password = document.getElementById("password").value;
 
-document.getElementById("search-btn").onclick = function() {
-	let temp = document.getElementById("case").value;
-	const dbRef = ref(getDatabase());
-	get(child(dbRef, `cases/${temp}`)).then((snapshot) => {
-        if (snapshot.exists()) {
-			input = `+972${snapshot.child("phone_num").val()}`;
-			console.log(input)
-			GenerateRecaptch();
-			console.log(input)
-			const appVerifier = window.recaptchaVerifier;
-			console.log(input)
-			signInWithPhoneNumber(auth, input, appVerifier).then((confirmationResult) => {
-			  // SMS sent. Prompt user to type the code from the message, then sign the
-			  // user in with confirmationResult.confirm(code).
-			  window.confirmationResult = confirmationResult;
-			  Verify();
-			  // ...
-			}).catch((error) => {
-			  // Error; SMS not sent
-			  // ...
-			  alert("אנא נסה שנית")
-			});
-			let casenum = {case_num:`${temp}`};
-			var myArr = [casenum];
-			localStorage.setItem('myitem', JSON.stringify(myArr[0]));
-			console.log(myArr[0].case_num);
-		} else {
-			alert("תיק לא נמצא")
-		  }
-		}).catch((error) => {
-		  console.error(error);
+	const auth = getAuth();
+	signInWithEmailAndPassword(auth, username, password)
+		.then((userCredential) => {
+			const user = userCredential.user;
+			window.location.href = "dashboard.html"
+		})
+		.catch((error) => {
+			alert('error: Wrong email or password were entered');
 		});
 }
-
-function Verify(){
-	var myModal = new bootstrap.Modal(document.getElementById("Verify"), {});
-	myModal.show();
-	document.getElementById('OkVerify').addEventListener('click', (event)=>{
-	  const code = document.getElementById('VerifyCode').value;
-	  const confirmationResult = window.confirmationResult;
-	  confirmationResult.confirm(code).then((result) => {
-		// User signed in successfully.
-		const user = result.user;
-		myModal.hide();
-		window.location.href="client_dashboard.html";
-  
-	  }).catch((error) => {
-		alert("קוד שגוי נסה שנית");
-	  });
-	})
-  }
-
