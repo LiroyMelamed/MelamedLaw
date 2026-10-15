@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לקוחות</title>
+    <link rel="icon" href="./logoLM.png">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./custom.scss">
+    <script type="module" defer src="/src/login.js"></script>
+
+</head>
+<body style="direction: rtl; font-family: 'Karantina', cursive;">
+    <div id="recaptcha-container"></div>
+    <div class="row justify-content-center" style="padding-top: 50px; padding-bottom: 120px;">
+        <div class="col-8">
+            <img src="../pic/logo2.png" alt="logo" width="100%"/>
+        </div>
+    </div>
+    <hr>
+    <div class="row justify-content-center" style="padding-top: 50px; padding-bottom: 50px;">
+        <div class="col-10">
+            <div class="input-group mb-3" style="direction: ltr;">
+                <button class="btn btn-outline-secondary" type="button" id="search-btn"><h3>עבור למעקב אחר התיק</h3></button>
+                <input type="text" class="form-control" placeholder="מס' תיק" aria-label="Example text with button addon" aria-describedby="button-addon1" style="text-align: end;" id="case">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="modal fade" id="Connect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="input-group input-group-lg">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="PhoneNum"></textarea>
+                        <label for="floatingTextarea">מספר פלאפון לאימות</label>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer" style="justify-content: center; text-align: center;">
+            <button type="button" class="btn btn-primary" id="OkConnect">התחבר</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="modal fade" id="Verify" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="input-group input-group-lg">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="VerifyCode"></textarea>
+                        <label for="floatingTextarea">קוד אימות</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="justify-content: center; text-align: center;">
+            <button type="button" class="btn btn-primary" id="OkVerify">התחבר</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
