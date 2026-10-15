@@ -3134,6 +3134,7 @@ const firebaseConfig = {
     let kind = document.getElementById('kind').value;
     const dbRef = ref(getDatabase());
     get(child(dbRef, `cases_type/${kind}`)).then((snapshot) => {
+      console.log(snapshot)
       if (snapshot.exists()) {
         if(snapshot.child("case_level").val() == '1') {
           document.getElementsByName('r02')[0].hidden = true;
@@ -3486,7 +3487,7 @@ const firebaseConfig = {
   //listener to add_Btn
   const add_Btn = document.getElementById("add_btn");
   add_Btn.addEventListener("click", (event) =>{
-
+    console.log("i am here");
     document.getElementsByName('r02')[0].hidden = true;
     document.getElementsByName('r03')[0].hidden = true;
     document.getElementsByName('r04')[0].hidden = true;
@@ -3503,12 +3504,14 @@ const firebaseConfig = {
 
 
     let count = 0;
+    console.log(count)
     const dbRef = ref(getDatabase());
 
     get(child(dbRef, `cases_type`)).then((snapshot) => {
       if (snapshot.exists()) {
         snapshot.forEach(snapshot => {
           count++;
+          console.log(count)
           document.getElementById(`choice${count}`).value = snapshot.child("case_type").val();
           document.getElementById(`choice${count}`).innerHTML = snapshot.child("case_type").val();
           document.getElementsByName(`choice${count}`)[0].hidden = false;
@@ -3521,6 +3524,47 @@ const firebaseConfig = {
       console.error(error);
     });
   })
+
+    //listener to add_Btn
+    const add_btnPhone = document.getElementById("add_btnPhone");
+    add_btnPhone.addEventListener("click", (event) =>{
+      console.log("i am here");
+      document.getElementsByName('r02')[0].hidden = true;
+      document.getElementsByName('r03')[0].hidden = true;
+      document.getElementsByName('r04')[0].hidden = true;
+      document.getElementsByName('r05')[0].hidden = true;
+      document.getElementsByName('r06')[0].hidden = true;
+      document.getElementsByName('r07')[0].hidden = true;
+      document.getElementsByName('r08')[0].hidden = true;
+      document.getElementsByName('r09')[0].hidden = true;
+      document.getElementsByName('r10')[0].hidden = true;
+      document.getElementsByName('r11')[0].hidden = true;
+      document.getElementsByName('r12')[0].hidden = true;
+      document.getElementsByName('r13')[0].hidden = true;
+      document.getElementsByName('r14')[0].hidden = true;
+  
+  
+      let count = 0;
+      console.log(count)
+      const dbRef = ref(getDatabase());
+  
+      get(child(dbRef, `cases_type`)).then((snapshot) => {
+        if (snapshot.exists()) {
+          snapshot.forEach(snapshot => {
+            count++;
+            console.log(count)
+            document.getElementById(`choice${count}`).value = snapshot.child("case_type").val();
+            document.getElementById(`choice${count}`).innerHTML = snapshot.child("case_type").val();
+            document.getElementsByName(`choice${count}`)[0].hidden = false;
+  
+          });
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      });
+    })
 
   //listener to casenumber
   const case_num_check = document.getElementById("case_num_check");
@@ -4663,10 +4707,6 @@ const firebaseConfig = {
             })
 
             }
-            
-        
-            
-            
 
           });
           cell.appendChild(nextBt);
@@ -13815,9 +13855,6 @@ const firebaseConfig = {
 
 
       }
-    
-
-      
 
       var exit_new_case = document.getElementById("exit_newcase");
       exit_new_case.addEventListener("click",function(){
